@@ -17,8 +17,8 @@ for row in rows[1:]:
     if len(tds) < 6:
         continue
     name = tds[1].text.strip()
-    dep = tds[2].text.strip()
-    actual = tds[3].text.strip()
+    dep = tds[2].text.strip()         # ✅ 預定開航時間
+    actual = tds[3].text.strip()      # ✅ 實際開航時間
     status = tds[4].text.strip()
     ferries.append({
         "name": name,
@@ -27,7 +27,8 @@ for row in rows[1:]:
         "status": status
     })
 
-with open("data/ferry.json", "w", encoding="utf-8") as f:
+os.makedirs("docs/data", exist_ok=True)
+with open("docs/data/ferry.json", "w", encoding="utf-8") as f:
     json.dump({
         "updated": datetime.now().isoformat(),
         "ferries": ferries
