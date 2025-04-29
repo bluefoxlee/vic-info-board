@@ -20,6 +20,9 @@ jobs:
       - name: Install dependencies
         run: pip install requests beautifulsoup4
 
+      - name: Install dependencies
+        run: pip install pytz
+
       - name: Run airport ferry scraper
         run: |
           python airport-ferry-scraper.py
