@@ -27,6 +27,6 @@ jobs:
         run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "github-actions"
-          git add data/ferry.json
+          git add docs/data/ferry.json
           git commit -m "Update ferry data" || echo "No changes"
           git push
