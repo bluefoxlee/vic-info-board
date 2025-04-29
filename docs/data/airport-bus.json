@@ -1,5 +1,20 @@
 [
   {
-    "note": "⚠️ 無法取得公車資料，可能為深夜或 API 無回應"
+    "car_id": "KKB-0606",
+    "route": "藍1",
+    "eta": "2分鐘",
+    "direction": "山外"
+  },
+  {
+    "car_id": "KKB-0707",
+    "route": "35",
+    "eta": "8分鐘",
+    "direction": "烈嶼"
+  },
+  {
+    "car_id": "KKB-0808",
+    "route": "3",
+    "eta": "15分鐘",
+    "direction": "金城"
   }
 ]
