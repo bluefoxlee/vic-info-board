@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import json
 from datetime import datetime
 import pytz
+from pathlib import Path
 
 url = "https://port.kinmen.gov.tw/kmeis/manager/tmp/realtimeshow1.php"
 
