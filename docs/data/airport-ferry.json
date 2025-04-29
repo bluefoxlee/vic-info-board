@@ -1,8 +1,89 @@
 {
   "ferries": [
     {
-      "note": "⚠️ 無法取得船班資料，可能為深夜或網站無回應"
+      "name": "五通 WuTong",
+      "dep": "新金祥龍 XKXL",
+      "actual": "08:30",
+      "status": ""
+    },
+    {
+      "name": "五通 WuTong",
+      "dep": "新東方 XDF",
+      "actual": "09:00",
+      "status": ""
+    },
+    {
+      "name": "石井 ShinJin",
+      "dep": "八方 BF",
+      "actual": "09:50",
+      "status": ""
+    },
+    {
+      "name": "五通 WuTong",
+      "dep": "和平新星 HP",
+      "actual": "10:00",
+      "status": ""
+    },
+    {
+      "name": "五通 WuTong",
+      "dep": "金瑞龍 KRL",
+      "actual": "10:30",
+      "status": ""
+    },
+    {
+      "name": "五通 WuTong",
+      "dep": "新五緣 WY",
+      "actual": "11:30",
+      "status": ""
+    },
+    {
+      "name": "五通 WuTong",
+      "dep": "新金祥龍 XKXL",
+      "actual": "12:30",
+      "status": ""
+    },
+    {
+      "name": "五通 WuTong",
+      "dep": "新捷安 XJA",
+      "actual": "13:30",
+      "status": ""
+    },
+    {
+      "name": "五通 WuTong",
+      "dep": "新東方 XDF",
+      "actual": "14:30",
+      "status": ""
+    },
+    {
+      "name": "五通 WuTong",
+      "dep": "和平新星 HP",
+      "actual": "15:30",
+      "status": ""
+    },
+    {
+      "name": "五通 WuTong",
+      "dep": "金瑞龍 KRL",
+      "actual": "16:30",
+      "status": ""
+    },
+    {
+      "name": "石井 ShinJin",
+      "dep": "八方 BF",
+      "actual": "16:35",
+      "status": ""
+    },
+    {
+      "name": "五通 WuTong",
+      "dep": "新五緣 WY",
+      "actual": "17:00",
+      "status": ""
+    },
+    {
+      "name": "五通 WuTong",
+      "dep": "新捷安 XJA",
+      "actual": "17:30",
+      "status": ""
     }
   ],
-  "updated": "2025-04-30 06:27:11"
+  "updated": "2025-04-30 06:42:55"
 }
