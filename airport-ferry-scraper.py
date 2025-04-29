@@ -17,23 +17,19 @@ try:
     ferries = []
 
     for row in rows:
-        cols = row.find_all("td")
-        if len(cols) >= 5:
-            name = cols[0].text.strip()
-            dep = cols[1].text.strip()
-            actual = cols[2].text.strip()
-            status = cols[3].text.strip()
-            ferry_name = row[1].strip()  # 船名
-            scheduled_time = row[0].strip()  # 預定出發時間
-            actual_time = row[4].strip() if len(row) > 4 and row[4].strip() else "--:--"
-            status_text = "準時 On Time" if actual_time == "--:--" else "已離港"
+    cols = row.find_all("td")
+    if len(cols) >= 5:
+        scheduled_time = cols[0].text.strip()    # 出發時間
+        ferry_name = cols[1].text.strip()        # 船名
+        actual_time = cols[3].text.strip()       # 實際出發
+        status_text = "準時 On Time" if actual_time == "" else "已離港"
 
-            ferries.append({
-                "name": ferry_name,
-                "dep": scheduled_time,
-                "actual": actual_time,
-                "status": status_text
-            })
+        ferries.append({
+            "name": ferry_name,
+            "dep": scheduled_time,
+            "actual": actual_time or "--:--",
+            "status": status_text
+        })
 
     if not ferries:
         ferries = [{"note": "⚠️ 無法取得船班資料，可能為深夜或網站無回應"}]
