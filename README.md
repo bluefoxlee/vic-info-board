@@ -7,3 +7,4 @@
 - 金門縣車船處公車動態
 
 將會將資料輸出至 `/data/ferry.json` 與 `/data/bus.json` 對應格式，供 Fly.io 等看板部署站點使用。
+<!-- 啟動 Actions -->
