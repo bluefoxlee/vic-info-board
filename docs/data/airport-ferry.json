@@ -1,89 +1,89 @@
 {
-  "updated": "2025-04-29T21:25:58.478326",
   "ferries": [
     {
-      "name": "新金祥龍 XKXL",
-      "dep": "08:30",
-      "actual": "",
-      "status": "準時 On Time"
+      "name": "0430",
+      "dep": "新金祥龍 XKXL",
+      "actual": "五通 WuTong",
+      "status": "08:30"
     },
     {
-      "name": "新東方 XDF",
-      "dep": "09:00",
-      "actual": "",
-      "status": "準時 On Time"
+      "name": "0430",
+      "dep": "新東方 XDF",
+      "actual": "五通 WuTong",
+      "status": "09:00"
     },
     {
-      "name": "八方 BF",
-      "dep": "09:50",
-      "actual": "",
-      "status": "準時 On Time"
+      "name": "0430",
+      "dep": "八方 BF",
+      "actual": "石井 ShinJin",
+      "status": "09:50"
     },
     {
-      "name": "和平新星 HP",
-      "dep": "10:00",
-      "actual": "",
-      "status": "準時 On Time"
+      "name": "0430",
+      "dep": "和平新星 HP",
+      "actual": "五通 WuTong",
+      "status": "10:00"
     },
     {
-      "name": "金瑞龍 KRL",
-      "dep": "10:30",
-      "actual": "",
-      "status": "準時 On Time"
+      "name": "0430",
+      "dep": "金瑞龍 KRL",
+      "actual": "五通 WuTong",
+      "status": "10:30"
     },
     {
-      "name": "新五緣 WY",
-      "dep": "11:30",
-      "actual": "",
-      "status": "準時 On Time"
+      "name": "0430",
+      "dep": "新五緣 WY",
+      "actual": "五通 WuTong",
+      "status": "11:30"
     },
     {
-      "name": "新金祥龍 XKXL",
-      "dep": "12:30",
-      "actual": "",
-      "status": "準時 On Time"
+      "name": "0430",
+      "dep": "新金祥龍 XKXL",
+      "actual": "五通 WuTong",
+      "status": "12:30"
     },
     {
-      "name": "新捷安 XJA",
-      "dep": "13:30",
-      "actual": "",
-      "status": "準時 On Time"
+      "name": "0430",
+      "dep": "新捷安 XJA",
+      "actual": "五通 WuTong",
+      "status": "13:30"
     },
     {
-      "name": "新東方 XDF",
-      "dep": "14:30",
-      "actual": "",
-      "status": "準時 On Time"
+      "name": "0430",
+      "dep": "新東方 XDF",
+      "actual": "五通 WuTong",
+      "status": "14:30"
     },
     {
-      "name": "和平新星 HP",
-      "dep": "15:30",
-      "actual": "",
-      "status": "準時 On Time"
+      "name": "0430",
+      "dep": "和平新星 HP",
+      "actual": "五通 WuTong",
+      "status": "15:30"
     },
     {
-      "name": "金瑞龍 KRL",
-      "dep": "16:30",
-      "actual": "",
-      "status": "準時 On Time"
+      "name": "0430",
+      "dep": "金瑞龍 KRL",
+      "actual": "五通 WuTong",
+      "status": "16:30"
     },
     {
-      "name": "八方 BF",
-      "dep": "16:35",
-      "actual": "",
-      "status": "準時 On Time"
+      "name": "0430",
+      "dep": "八方 BF",
+      "actual": "石井 ShinJin",
+      "status": "16:35"
     },
     {
-      "name": "新五緣 WY",
-      "dep": "17:00",
-      "actual": "",
-      "status": "準時 On Time"
+      "name": "0430",
+      "dep": "新五緣 WY",
+      "actual": "五通 WuTong",
+      "status": "17:00"
     },
     {
-      "name": "新捷安 XJA",
-      "dep": "17:30",
-      "actual": "",
-      "status": "準時 On Time"
+      "name": "0430",
+      "dep": "新捷安 XJA",
+      "actual": "五通 WuTong",
+      "status": "17:30"
     }
-  ]
+  ],
+  "updated": "2025-04-30 05:43:00"
 }
