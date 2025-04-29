@@ -2,35 +2,48 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime
 import json
-import os
 
 url = "https://port.kinmen.gov.tw/kmeis/manager/tmp/realtimeshow1.php"
-res = requests.get(url, timeout=10)
-res.encoding = "utf-8"
-soup = BeautifulSoup(res.text, "html.parser")
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/123.0.0.0 Safari/537.36"
+}
 
-rows = soup.select("tr")
 ferries = []
 
-for row in rows[1:]:
-    tds = row.select("td")
-    if len(tds) < 6:
-        continue
-    name = tds[1].text.strip()            # 船名
-    dep = tds[3].text.strip()             # ✅ 預定時間（原定開航）
-    actual = tds[4].text.strip()          # ✅ 實際時間
-    status = tds[5].text.strip()          # ✅ 狀態：安檢中／離港／延誤
+try:
+    res = requests.get(url, headers=headers, timeout=10)
+    res.encoding = 'utf-8'
+    soup = BeautifulSoup(res.text, "html.parser")
+    
+    rows = soup.select("table.table tr")[1:]  # skip header
+    for row in rows:
+        cols = row.find_all("td")
+        if len(cols) >= 4:
+            name = cols[0].text.strip()
+            dep = cols[1].text.strip()
+            actual = cols[2].text.strip()
+            status = cols[3].text.strip()
+            ferries.append({
+                "name": name,
+                "dep": dep,
+                "actual": actual,
+                "status": status
+            })
+    
+    if not ferries:
+        raise ValueError("無資料")
 
-    ferries.append({
-        "name": name,
-        "dep": dep,
-        "actual": actual,
-        "status": status
-    })
+except Exception as e:
+    ferries = [{
+        "note": "⚠️ 無法取得船班資料，可能為深夜或網站無回應"
+    }]
 
-os.makedirs("docs/data", exist_ok=True)
-with open("docs/data/ferry.json", "w", encoding="utf-8") as f:
-    json.dump({
-        "updated": datetime.now().isoformat(),
-        "ferries": ferries
-    }, f, ensure_ascii=False, indent=2)
+output = {
+    "ferries": ferries,
+    "updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+}
+
+with open("docs/data/airport-ferry.json", "w", encoding="utf-8") as f:
+    json.dump(output, f, ensure_ascii=False, indent=2)
+
+print("✅ 已更新 docs/data/airport-ferry.json")
