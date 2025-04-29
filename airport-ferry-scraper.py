@@ -29,7 +29,7 @@ for row in rows[1:]:
     })
 
 os.makedirs("docs/data", exist_ok=True)
-with open("docs/data/ferry.json", "w", encoding="utf-8") as f:
+with open("docs/data/airport-ferry.json", "w", encoding="utf-8") as f:
     json.dump({
         "updated": datetime.now().isoformat(),
         "ferries": ferries
