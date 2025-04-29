@@ -1,0 +1,32 @@
+name: Update Bus Data
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'  # 每 5 分鐘執行一次
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Run bus scraper
+        run: python bus-scraper.py
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.email "github-actions@github.com"
+          git config --global user.name "GitHub Actions"
+          git add data/bus.json
+          git commit -m "📦 update: latest bus.json" || echo "No changes to commit"
+          git push
