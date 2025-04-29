@@ -58,6 +58,7 @@ def fetch_schedule():
 def main():
     est = fetch_estimates()
     sch = fetch_schedule()
+    now = datetime.now(tz)
 
     # 預估資料整理成 dict，key 用 plateNumb+routeId
     est_dict = {}
@@ -74,13 +75,17 @@ def main():
 
     output = []
     for s in sch:
-        stop_name = s.get("StopName", "")
-        stop_id = s.get("StopID", "")
+        stop_id = str(s.get("StopID", ""))
+        if stop_id not in map(str, STOP_IDS):
+            continue
+
         route_id = s.get("RouteId", "")
         plate = s.get("PlateNumb", "").strip()
         time_str = s.get("Time", "").strip()
 
-        if str(stop_id) not in map(str, STOP_IDS):
+        try:
+            dep_time = datetime.strptime(time_str, "%H:%M").replace(year=now.year, month=now.month, day=now.day)
+        except:
             continue
 
         key = (plate, route_id)
@@ -92,14 +97,31 @@ def main():
             "eta": eta,
             "scheduled": time_str,
             "direction": resolve_direction(route_id),
-            "time": time_str
+            "time": time_str,
+            "timestamp": dep_time.timestamp()
         })
 
-    # 排序：先時間，再方向
-    output.sort(key=lambda x: x["time"])
+    # 排序並過濾僅顯示未來班次（+ 額外保留最後兩筆已離站資料）
+    output.sort(key=lambda x: x["timestamp"])
+    upcoming = [b for b in output if b["timestamp"] >= now.timestamp()]
+
+    if not upcoming and len(output) >= 2:
+        upcoming = output[-2:]
+        upcoming.append({
+            "car": "",
+            "route": "",
+            "eta": "",
+            "scheduled": "",
+            "direction": "",
+            "time": "",
+            "note": "末班車已離站"
+        })
+
+    for b in upcoming:
+        b.pop("timestamp", None)
 
     with open("docs/data/airport-bus.json", "w", encoding="utf-8") as f:
-        json.dump(output, f, ensure_ascii=False, indent=2)
+        json.dump(upcoming, f, ensure_ascii=False, indent=2)
 
 if __name__ == "__main__":
     main()
