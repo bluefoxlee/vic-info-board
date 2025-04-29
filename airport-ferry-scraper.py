@@ -2,6 +2,10 @@ import requests
 from bs4 import BeautifulSoup
 import json
 from datetime import datetime, timedelta
+from zoneinfo import ZoneInfo  # Python 3.9+
+
+tz = ZoneInfo("Asia/Taipei")  # Taiwan 時區
+now = datetime.now(tz)        # 台灣現在時間
 
 url = "https://port.kinmen.gov.tw/kmeis/manager/tmp/realtimeshow1.php"
 headers = {
@@ -14,7 +18,7 @@ def get_ferry_data():
         res.encoding = "utf-8"
         soup = BeautifulSoup(res.text, "html.parser")
 
-        rows = soup.select("table")[0].select("tr")[1:]  # 跳過表頭
+        rows = soup.select("table")[0].select("tr")[1:]
         ferries = []
         for row in rows:
             cols = row.select("td")
@@ -38,10 +42,8 @@ def get_ferry_data():
         return None
 
 def filter_ferries(ferries):
-    now = datetime.now()
     current_time = now.time()
 
-    # 判斷是否在午夜至首航前
     earliest_time = None
     valid_ferries = []
     for f in ferries:
@@ -53,10 +55,8 @@ def filter_ferries(ferries):
             continue
 
     if earliest_time and current_time < earliest_time:
-        # 尚未開始營運，顯示最早的 3 班
         return ferries[:3]
 
-    # 篩選前 1 小時 ~ 後 2 小時
     result = []
     for f in ferries:
         try:
@@ -84,7 +84,7 @@ else:
     else:
         output["ferries"] = filtered
 
-output["updated"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+output["updated"] = now.strftime("%Y-%m-%d %H:%M:%S")
 
 with open("docs/data/airport-ferry.json", "w", encoding="utf-8") as f:
     json.dump(output, f, ensure_ascii=False, indent=2)
