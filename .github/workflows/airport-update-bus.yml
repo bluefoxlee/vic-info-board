@@ -27,6 +27,7 @@ jobs:
         run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "GitHub Actions"
-          git add docs/data/airport-bus.json
+#          git add docs/data/airport-bus.json
+          git add docs/data/*.json
           git commit -m "📦 update: latest bus.json" || echo "No changes to commit"
           git push
