@@ -1,36 +1,46 @@
 import requests
 from bs4 import BeautifulSoup
-from datetime import datetime
 import json
-import os
+from datetime import datetime
+import pytz
 
 url = "https://port.kinmen.gov.tw/kmeis/manager/tmp/realtimeshow1.php"
-res = requests.get(url, timeout=10)
-res.encoding = "utf-8"
-soup = BeautifulSoup(res.text, "html.parser")
 
-rows = soup.select("tr")
-ferries = []
+try:
+    response = requests.get(url, timeout=10)
+    response.encoding = "utf-8"
 
-for row in rows[1:]:
-    tds = row.select("td")
-    if len(tds) < 6:
-        continue
-    name = tds[1].text.strip()            # 船名
-    dep = tds[3].text.strip()             # ✅ 預定時間（原定開航）
-    actual = tds[4].text.strip()          # ✅ 實際時間
-    status = tds[5].text.strip()          # ✅ 狀態：安檢中／離港／延誤
+    soup = BeautifulSoup(response.text, "html.parser")
+    rows = soup.select("tr")[1:]  # skip header
 
-    ferries.append({
-        "name": name,
-        "dep": dep,
-        "actual": actual,
-        "status": status
-    })
+    ferries = []
 
-os.makedirs("docs/data", exist_ok=True)
-with open("docs/data/airport-ferry.json", "w", encoding="utf-8") as f:
-    json.dump({
-        "updated": datetime.now().isoformat(),
-        "ferries": ferries
-    }, f, ensure_ascii=False, indent=2)
+    for row in rows:
+        cols = row.find_all("td")
+        if len(cols) >= 5:
+            name = cols[0].text.strip()
+            dep = cols[1].text.strip()
+            actual = cols[2].text.strip()
+            status = cols[3].text.strip()
+            ferries.append({
+                "name": name,
+                "dep": dep,
+                "actual": actual,
+                "status": status
+            })
+
+    if not ferries:
+        ferries = [{"note": "⚠️ 無法取得船班資料，可能為深夜或網站無回應"}]
+
+except Exception as e:
+    ferries = [{"note": "⚠️ 無法取得船班資料，可能為深夜或網站無回應"}]
+
+updated_time = datetime.now(pytz.timezone("Asia/Taipei")).strftime("%Y-%m-%d %H:%M:%S")
+
+output = {
+    "ferries": ferries,
+    "updated": updated_time
+}
+
+Path("docs/data/airport-ferry.json").write_text(json.dumps(output, ensure_ascii=False, indent=2))
+print("✅ Saved to docs/data/airport-ferry.json")
