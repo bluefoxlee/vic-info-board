@@ -20,8 +20,8 @@ jobs:
       - name: Install dependencies
         run: pip install requests
 
-      - name: Run bus scraper
-        run: python bus-scraper.py
+      - name: Run airport bus scraper
+        run: python airport-bus-scraper.py
 
       - name: Commit and push changes
         run: |
