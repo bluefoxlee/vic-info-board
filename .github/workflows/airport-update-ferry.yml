@@ -1,16 +1,16 @@
 name: Airport Update Ferry
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'  # 每5分鐘跑一次
   workflow_dispatch:
+  schedule:
+    - cron: "*/5 * * * *"  # 每五分鐘執行一次
 
 jobs:
   update:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
@@ -18,15 +18,10 @@ jobs:
           python-version: '3.11'
 
       - name: Install dependencies
-        run: |
-          pip install requests beautifulsoup4
+        run: pip install requests beautifulsoup4
 
       - name: Run airport ferry scraper
-        run: |
-          python airport-ferry-scraper.py
-
-      - name: Add updated ferry.json
-        run: git add docs/data/airport-ferry.json
+        run: python airport-ferry-scraper.py
 
       - name: Commit and push changes
         run: |
