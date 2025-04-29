@@ -1,89 +1,17 @@
 {
-  "updated": "2025-04-29T08:27:43.509140",
+  "updated": "2025-04-29T00:00:00",
   "ferries": [
     {
-      "name": "馬可波羅1號 MKPL1",
-      "dep": "五通 WuTong",
-      "actual": "08:30",
-      "status": "08:18"
+      "name": "新東方",
+      "dep": "16:30",
+      "actual": "16:18",
+      "status": "已離港 Departure"
     },
     {
-      "name": "新金祥龍 XKXL",
-      "dep": "五通 WuTong",
-      "actual": "09:00",
-      "status": "08:51"
-    },
-    {
-      "name": "八方 BF",
-      "dep": "石井 ShinJin",
-      "actual": "09:50",
-      "status": "09:43"
-    },
-    {
-      "name": "迅安 XA",
-      "dep": "五通 WuTong",
-      "actual": "10:00",
-      "status": "09:52"
-    },
-    {
-      "name": "新東方 XDF",
-      "dep": "五通 WuTong",
-      "actual": "10:30",
-      "status": "10:23"
-    },
-    {
-      "name": "和平新星 HP",
-      "dep": "五通 WuTong",
-      "actual": "11:30",
-      "status": "11:25"
-    },
-    {
-      "name": "馬可波羅1號 MKPL1",
-      "dep": "五通 WuTong",
-      "actual": "12:30",
-      "status": "12:22"
-    },
-    {
-      "name": "新五緣 WY",
-      "dep": "五通 WuTong",
-      "actual": "13:30",
-      "status": "13:27"
-    },
-    {
-      "name": "新金祥龍 XKXL",
-      "dep": "五通 WuTong",
-      "actual": "14:30",
-      "status": "14:36"
-    },
-    {
-      "name": "迅安 XA",
-      "dep": "五通 WuTong",
-      "actual": "15:30",
-      "status": "15:23"
-    },
-    {
-      "name": "新東方 XDF",
-      "dep": "五通 WuTong",
-      "actual": "16:30",
-      "status": "16:22"
-    },
-    {
-      "name": "八方 BF",
-      "dep": "石井 ShinJin",
-      "actual": "16:35",
-      "status": "16:15"
-    },
-    {
-      "name": "和平新星 HP",
-      "dep": "五通 WuTong",
-      "actual": "17:00",
-      "status": ""
-    },
-    {
-      "name": "新五緣 WY",
-      "dep": "五通 WuTong",
-      "actual": "17:30",
-      "status": ""
+      "name": "和平新星",
+      "dep": "17:00",
+      "actual": "16:54",
+      "status": "已離港 Departure"
     }
   ]
 }
