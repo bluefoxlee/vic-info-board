@@ -1,4 +1,89 @@
 {
-  "ferries": [],
-  "updated": "2025-04-30 00:00:00"
+  "updated": "2025-04-29T21:25:58.478326",
+  "ferries": [
+    {
+      "name": "新金祥龍 XKXL",
+      "dep": "08:30",
+      "actual": "",
+      "status": "準時 On Time"
+    },
+    {
+      "name": "新東方 XDF",
+      "dep": "09:00",
+      "actual": "",
+      "status": "準時 On Time"
+    },
+    {
+      "name": "八方 BF",
+      "dep": "09:50",
+      "actual": "",
+      "status": "準時 On Time"
+    },
+    {
+      "name": "和平新星 HP",
+      "dep": "10:00",
+      "actual": "",
+      "status": "準時 On Time"
+    },
+    {
+      "name": "金瑞龍 KRL",
+      "dep": "10:30",
+      "actual": "",
+      "status": "準時 On Time"
+    },
+    {
+      "name": "新五緣 WY",
+      "dep": "11:30",
+      "actual": "",
+      "status": "準時 On Time"
+    },
+    {
+      "name": "新金祥龍 XKXL",
+      "dep": "12:30",
+      "actual": "",
+      "status": "準時 On Time"
+    },
+    {
+      "name": "新捷安 XJA",
+      "dep": "13:30",
+      "actual": "",
+      "status": "準時 On Time"
+    },
+    {
+      "name": "新東方 XDF",
+      "dep": "14:30",
+      "actual": "",
+      "status": "準時 On Time"
+    },
+    {
+      "name": "和平新星 HP",
+      "dep": "15:30",
+      "actual": "",
+      "status": "準時 On Time"
+    },
+    {
+      "name": "金瑞龍 KRL",
+      "dep": "16:30",
+      "actual": "",
+      "status": "準時 On Time"
+    },
+    {
+      "name": "八方 BF",
+      "dep": "16:35",
+      "actual": "",
+      "status": "準時 On Time"
+    },
+    {
+      "name": "新五緣 WY",
+      "dep": "17:00",
+      "actual": "",
+      "status": "準時 On Time"
+    },
+    {
+      "name": "新捷安 XJA",
+      "dep": "17:30",
+      "actual": "",
+      "status": "準時 On Time"
+    }
+  ]
 }
