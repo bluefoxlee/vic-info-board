@@ -23,11 +23,16 @@ try:
             dep = cols[1].text.strip()
             actual = cols[2].text.strip()
             status = cols[3].text.strip()
+            ferry_name = row[1].strip()  # 船名
+            scheduled_time = row[0].strip()  # 預定出發時間
+            actual_time = row[4].strip() if len(row) > 4 and row[4].strip() else "--:--"
+            status_text = "準時 On Time" if actual_time == "--:--" else "已離港"
+
             ferries.append({
-                "name": name,
-                "dep": dep,
-                "actual": actual,
-                "status": status
+                "name": ferry_name,
+                "dep": scheduled_time,
+                "actual": actual_time,
+                "status": status_text
             })
 
     if not ferries:
