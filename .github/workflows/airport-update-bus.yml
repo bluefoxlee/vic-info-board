@@ -20,8 +20,8 @@ jobs:
       - name: Install dependencies
         run: pip install beautifulsoup4 requests
 
-      - name: Run ferry scraper
-        run: python ferry-scraper.py
+      - name: Run airport ferry scraper
+        run: python airport-ferry-scraper.py
 
       - name: Commit changes
         run: |
