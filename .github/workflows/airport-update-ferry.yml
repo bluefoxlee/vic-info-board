@@ -25,10 +25,13 @@ jobs:
         run: |
           python airport-ferry-scraper.py
 
+      - name: Add updated ferry.json
+        run: git add docs/data/airport-ferry.json
+
       - name: Commit and push changes
         run: |
           git config --global user.email "github-actions@github.com"
           git config --global user.name "github-actions"
           git add -f docs/data/airport-ferry.json
-          git commit -m "Auto update airport ferry JSON [skip ci]" || echo "No changes to commit"
+          git commit -m "🚢 Update airport ferry data" || echo "No changes to commit"
           git push
