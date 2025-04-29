@@ -1,89 +1,17 @@
 {
-  "updated": "2025-04-29T15:57:20.541085",
-  "ferries": [
+  "generated_at": "2025-04-29 19:43:35",
+  "data": [
     {
-      "name": "馬可波羅1號 MKPL1",
-      "dep": "08:30",
-      "actual": "08:18",
-      "status": "已離港 Departure"
+      "name": "新五緣",
+      "dep": "五通",
+      "actual": "17:30",
+      "status": "安檢中"
     },
     {
-      "name": "新金祥龍 XKXL",
-      "dep": "09:00",
-      "actual": "08:51",
-      "status": "已離港 Departure"
-    },
-    {
-      "name": "八方 BF",
-      "dep": "09:50",
-      "actual": "09:43",
-      "status": "已離港 Departure"
-    },
-    {
-      "name": "迅安 XA",
-      "dep": "10:00",
-      "actual": "09:52",
-      "status": "已離港 Departure"
-    },
-    {
-      "name": "新東方 XDF",
-      "dep": "10:30",
-      "actual": "10:23",
-      "status": "已離港 Departure"
-    },
-    {
-      "name": "和平新星 HP",
-      "dep": "11:30",
-      "actual": "11:25",
-      "status": "已離港 Departure"
-    },
-    {
-      "name": "馬可波羅1號 MKPL1",
-      "dep": "12:30",
-      "actual": "12:22",
-      "status": "已離港 Departure"
-    },
-    {
-      "name": "新五緣 WY",
-      "dep": "13:30",
-      "actual": "13:27",
-      "status": "已離港 Departure"
-    },
-    {
-      "name": "新金祥龍 XKXL",
-      "dep": "14:30",
-      "actual": "14:36",
-      "status": "已離港 Departure"
-    },
-    {
-      "name": "迅安 XA",
-      "dep": "15:30",
-      "actual": "15:23",
-      "status": "已離港 Departure"
-    },
-    {
-      "name": "新東方 XDF",
-      "dep": "16:30",
-      "actual": "16:22",
-      "status": "已離港 Departure"
-    },
-    {
-      "name": "八方 BF",
-      "dep": "16:35",
-      "actual": "16:15",
-      "status": "已離港 Departure"
-    },
-    {
-      "name": "和平新星 HP",
-      "dep": "17:00",
-      "actual": "16:53",
-      "status": "已離港 Departure"
-    },
-    {
-      "name": "新五緣 WY",
-      "dep": "17:30",
-      "actual": "17:33",
-      "status": "已離港 Departure"
+      "name": "和平新星",
+      "dep": "廈門",
+      "actual": "18:00",
+      "status": "已離港"
     }
   ]
 }
