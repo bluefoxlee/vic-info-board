@@ -1,32 +1,38 @@
-name: Update Ferry Data
+name: ✈️ Airport Update Ferry Data
 
 on:
   schedule:
-    - cron: "*/5 * * * *"
+    - cron: '*/5 * * * *'  # 每五分鐘更新一次
   workflow_dispatch:
 
 jobs:
-  build:
+  update-ferry:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout repo
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up Python
         uses: actions/setup-python@v4
         with:
-          python-version: "3.11"
+          python-version: '3.11'
 
       - name: Install dependencies
-        run: pip install beautifulsoup4 requests
+        run: pip install requests beautifulsoup4
 
-      - name: Run airport ferry scraper
+      - name: Run ferry scraper
         run: python airport-ferry-scraper.py
 
-      - name: Commit changes
+      - name: Commit and push updated airport-ferry.json
         run: |
           git config --global user.email "github-actions@github.com"
-          git config --global user.name "github-actions"
-          git add docs/data/airport-ferry.json
-          git commit -m "Update ferry data" || echo "No changes"
-          git push
+          git config --global user.name "GitHub Actions"
+          
+          # 強制追蹤正確的 ferry 檔案路徑
+          if [ -f docs/data/airport-ferry.json ]; then
+            git add -f docs/data/airport-ferry.json
+            git commit -m "🔄 Auto-update airport-ferry.json" || echo "No changes to commit"
+            git push
+          else
+            echo "⚠️ docs/data/airport-ferry.json not found. Nothing to commit."
