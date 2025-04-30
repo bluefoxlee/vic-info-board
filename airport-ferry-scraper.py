@@ -117,7 +117,6 @@ with open("ferry.html", "w", encoding="utf-8") as f:
     f.write(html)
 print("ferry.html 已產生")
 
-
 output = {
     "ferries": ferries,
     "updated": now.strftime("%Y-%m-%d %H:%M:%S")
