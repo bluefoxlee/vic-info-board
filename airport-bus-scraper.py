@@ -144,4 +144,5 @@ output = {
 with open("docs/data/airport-bus.json", "w", encoding="utf-8") as f:
     json.dump(output, f, ensure_ascii=False, indent=2)
 
+print("✅ airport-bus.json updated")
 print(json.dumps(output, ensure_ascii=False, indent=2))
