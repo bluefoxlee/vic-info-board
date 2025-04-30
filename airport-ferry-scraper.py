@@ -25,7 +25,8 @@ def get_icon(status):
     else:
         return "⚪"
 
-now = datetime.now()
+from datetime import timezone
+now = datetime.now(timezone(timedelta(hours=8)))
 start_time = now - timedelta(hours=1)
 end_time = now + timedelta(hours=2)
 
