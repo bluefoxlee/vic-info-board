@@ -1,149 +1,83 @@
+
+from datetime import datetime, timedelta, timezone
 import requests
 import json
-from datetime import datetime, timezone, timedelta
+import os
 
-tz = timezone(timedelta(hours=8))
-today = datetime.now(tz).strftime("%Y-%m-%d")
-
-STOP_IDS = [6035, 7947, 12055, 1743, 3333]
-ROUTE_GROUPS = {
-    "藍1": ["13", "131", "14", "141"],
-    "3": ["31", "32"],
-    "27": ["2711", "2721"],
-    "35": ["351", "352"],
-    "36": ["364"]
+routes_info = {
+    "13": {"label": "藍1", "direction": "往山外"},
+    "131": {"label": "藍1", "direction": "往山外"},
+    "14": {"label": "藍1", "direction": "往金城"},
+    "141": {"label": "藍1", "direction": "往金城"},
+    "31": {"label": "3", "direction": "往山外"},
+    "32": {"label": "3", "direction": "往金城"},
+    "2711": {"label": "27", "direction": "往沙美"},
+    "2721": {"label": "27", "direction": "往山外"},
+    "351": {"label": "35", "direction": "往烈嶼"},
+    "352": {"label": "35", "direction": "往山外"},
+    "364": {"label": "36", "direction": "往山外"},
 }
-
-def simplify_route(route_id):
-    for name, ids in ROUTE_GROUPS.items():
-        if route_id in ids:
-            return name
-    return route_id
-
-def resolve_direction(route_id):
-    if route_id in ["13", "131"]:
-        return "山外"
-    elif route_id in ["14", "141"]:
-        return "金城"
-    elif route_id in ["2711", "2721"]:
-        return "沙美"
-    else:
-        return ""
 
 def fetch_estimates():
-    result = []
-    for stop_id in STOP_IDS:
-        try:
-            res = requests.get(f"https://ebus.kinmen.gov.tw/xmlbus4/rest/RealTimeByStopID/{stop_id}", timeout=10)
-            if res.ok:
-                result.extend(res.json())
-        except:
-            continue
-    return result
-
-def fetch_schedule():
+    all_est = []
+    route_ids = ",".join(routes_info.keys())
+    url = f"https://ebus.kinmen.gov.tw/xmlbus4/GetEstimateTime.json?routeIds={route_ids}"
     try:
-        res = requests.get(f"https://ebus.kinmen.gov.tw/api/schedule?date={today}", timeout=10)
-        if res.ok:
-            return res.json()
-    except:
-        pass
-    return []
+        res = requests.get(url, verify=False, timeout=10)
+        data = res.json()
+        for rid, stop_list in data.items():
+            for stop in stop_list:
+                if "民航站" not in stop.get("StopName", ""):
+                    continue
+                stop["RouteID"] = rid
+                all_est.append(stop)
+    except Exception as e:
+        print("❌ ETA 抓取錯誤：", e)
+    return all_est
 
 def main():
+    print("👀 main() 開始執行")
     est = fetch_estimates()
-    sch = fetch_schedule()
-    now = datetime.now(tz)
+    print(f"📦 預估資料數量：{len(est)}")
 
-    print(f"📦 預估資料數量：{len(est)}，排班資料數量：{len(sch)}")
-
-    est_dict = {}
-    for e in est:
-        key = (e.get("PlateNumb", ""), e.get("RouteId", ""))
-        eta = e.get("EstimateTime", None)
-        if eta is None:
-            eta_text = "未發車"
-        elif eta <= 60:
-            eta_text = "即將進站"
-        else:
-            eta_text = f"{eta // 60}分"
-        est_dict[key] = eta_text
-
-    output = []
-    for s in sch:
-        stop_id = str(s.get("StopID", ""))
-        if stop_id not in map(str, STOP_IDS):
+    buses = []
+    valid_count = 0
+    for s in est:
+        if "民航站" not in s.get("StopName", ""):
             continue
 
-        route_id = s.get("RouteId", "")
-        plate = s.get("PlateNumb", "").strip()
-        time_str = s.get("Time", "").strip()
+        if not s.get("ests"):
+            buses.append({
+                "carNo": "—",
+                "route": routes_info.get(s.get("RouteID", ""), {}).get("label", "❓"),
+                "eta": "尚無資料",
+                "dest": routes_info.get(s.get("RouteID", ""), {}).get("direction", "❓")
+            })
+            continue  # ❗ 跳過 est_entry 處理
 
-        try:
-            dep_time = datetime.strptime(time_str, "%H:%M").replace(year=now.year, month=now.month, day=now.day)
-        except:
-            continue
+        for est_entry in s.get("ests", []):
+            car_id = est_entry.get("carid", "🚍")
+            est_min = est_entry.get("est")
+            buses.append({
+                "carNo": car_id,
+                "route": routes_info.get(s.get("RouteID", ""), {}).get("label", "❓"),
+                "eta": f"{est_min}分" if est_min is not None else "未發車",
+                "dest": routes_info.get(s.get("RouteID", ""), {}).get("direction", "❓")
+            })
 
-        key = (plate, route_id)
-        eta = est_dict.get(key, "未發車")
+    now = datetime.now(timezone(timedelta(hours=8)))
+    output = {
+        "buses": buses,
+        "updated": now.strftime("%Y-%m-%d %H:%M:%S")
+    }
 
-        output.append({
-            "car": plate,
-            "route": simplify_route(route_id),
-            "eta": eta,
-            "scheduled": time_str,
-            "direction": resolve_direction(route_id),
-            "time": time_str,
-            "timestamp": dep_time.timestamp()
-        })
-
-    output.sort(key=lambda x: x["timestamp"])
-    upcoming = [b for b in output if b["timestamp"] >= now.timestamp()]
-
-    if not upcoming and len(output) >= 2:
-        upcoming = output[-2:]
-        upcoming.append({
-            "car": "",
-            "route": "",
-            "eta": "",
-            "scheduled": "",
-            "direction": "",
-            "time": "",
-            "note": "末班車已離站"
-        })
-
-    for b in upcoming:
-        b.pop("timestamp", None)
-
-    if not upcoming:
-        upcoming = [{
-            "note": "⚠️ 無法取得公車資料，可能為深夜或 API 無回應"
-        }]
-
+    os.makedirs("docs/data", exist_ok=True)
     with open("docs/data/airport-bus.json", "w", encoding="utf-8") as f:
-    json.dump(output, f, ensure_ascii=False, indent=2)
-        
+        json.dump(output, f, ensure_ascii=False, indent=2)
+
+    print("📁 寫入 airport-bus.json 完成")
+    print("✅ airport-bus.json updated")
+    print(json.dumps(output, ensure_ascii=False, indent=2))
+
 if __name__ == "__main__":
     main()
-
-from datetime import datetime, timezone, timedelta
-now = datetime.now(timezone(timedelta(hours=8)))
-output["updated"] = now.strftime("%Y-%m-%d %H:%M:%S")
-
-import json
-print(json.dumps(output, ensure_ascii=False, indent=2))
-
-
-from datetime import datetime, timezone, timedelta
-now = datetime.now(timezone(timedelta(hours=8)))
-
-output = {
-    "buses": buses,
-    "updated": now.strftime("%Y-%m-%d %H:%M:%S")
-}
-
-with open("docs/data/airport-bus.json", "w", encoding="utf-8") as f:
-    json.dump(output, f, ensure_ascii=False, indent=2)
-
-print("✅ airport-bus.json updated")
-print(json.dumps(output, ensure_ascii=False, indent=2))
