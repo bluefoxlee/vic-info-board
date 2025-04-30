@@ -11,7 +11,12 @@ try:
     response = requests.get(url, timeout=10)
     response.encoding = "utf-8"
 
-    soup = BeautifulSoup(response.text, "html.parser")
+    
+now = datetime.now()
+start_time = now - timedelta(hours=1)
+end_time = now + timedelta(hours=2)
+soup = BeautifulSoup(response.text, "html.parser")
+
     rows = soup.select("tr")[1:]  # skip header
 
     ferries = []
