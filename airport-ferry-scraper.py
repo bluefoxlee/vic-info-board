@@ -7,16 +7,14 @@ from pathlib import Path
 
 url = "https://port.kinmen.gov.tw/kmeis/manager/tmp/realtimeshow1.php"
 
+now = datetime.now()
+start_time = now - timedelta(hours=1)
+end_time = now + timedelta(hours=2)
 try:
     response = requests.get(url, timeout=10)
     response.encoding = "utf-8"
 
-    
-now = datetime.now()
-start_time = now - timedelta(hours=1)
-end_time = now + timedelta(hours=2)
-soup = BeautifulSoup(response.text, "html.parser")
-
+    soup = BeautifulSoup(response.text, "html.parser")
     rows = soup.select("tr")[1:]  # skip header
 
     ferries = []
@@ -40,7 +38,10 @@ Path("docs/data/airport-ferry.json").write_text(json.dumps(output, ensure_ascii=
 print("✅ Saved to docs/data/airport-ferry.json")
 
 def parse_time_str(tstr):
-    try:
+    now = datetime.now()
+start_time = now - timedelta(hours=1)
+end_time = now + timedelta(hours=2)
+try:
         return datetime.strptime(tstr.strip(), "%H:%M").replace(
             year=now.year, month=now.month, day=now.day
         )
