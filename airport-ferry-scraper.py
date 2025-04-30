@@ -16,14 +16,31 @@ try:
 
     ferries = []
 
-    for row in rows:
-        cols = row.find_all("td")
-        if len(cols) >= 5:
-            ferry_name = cols[2].text.strip()        # 船名
-            scheduled_time = cols[1].text.strip()    # 預定時間
-            actual_time = cols[3].text.strip()       # 實際出發時間
-            status_text = cols[4].text.strip()       # 備註狀態（例如「準時」、「延遲」）
+    from datetime import datetime, timedelta
 
+now = datetime.now()
+time_window_start = now - timedelta(hours=1)
+time_window_end = now + timedelta(hours=2)
+
+for row in rows:
+    cols = row.find_all("td")
+    if len(cols) >= 5:
+        scheduled_time = cols[1].text.strip()  # 預定出發時間
+        raw_ferry_name = cols[2].text.strip()  # 船名（含英文）
+        actual_time = cols[3].text.strip()     # 實際出發時間
+        status_text = "已離港" if actual_time else "準時 On Time"
+
+        # 去除英文簡寫
+        ferry_name = raw_ferry_name.split()[0]
+
+        # 解析時間篩選條件（格式為 HH:MM）
+        try:
+            sched_dt = datetime.strptime(scheduled_time, "%H:%M").replace(
+                year=now.year, month=now.month, day=now.day)
+        except ValueError:
+            continue
+
+        if time_window_start <= sched_dt <= time_window_end:
             ferries.append({
                 "name": ferry_name,
                 "dep": scheduled_time,
