@@ -25,7 +25,7 @@ time_window_end = now + timedelta(hours=2)
 for row in rows:
     cols = row.find_all("td")
     if len(cols) >= 5:
-        scheduled_time = cols[1].text.strip()  # 預定出發時間
+        scheduled_time = cols[1].text.strip()  # 預定時間
         raw_ferry_name = cols[2].text.strip()  # 船名（含英文）
         actual_time = cols[3].text.strip()     # 實際出發時間
         status_text = "已離港" if actual_time else "準時 On Time"
@@ -34,18 +34,18 @@ for row in rows:
         ferry_name = raw_ferry_name.split()[0]
 
         try:
-            # 解析時間並與當前時間進行篩選比對
-            sched_dt = datetime.strptime(scheduled_time, "%H:%M").replace(
-                year=now.year, month=now.month, day=now.day)
-            if time_window_start <= sched_dt <= time_window_end:
-                ferries.append({
-                    "name": ferry_name,
-                    "dep": scheduled_time,
-                    "actual": actual_time or "--:--",
-                    "status": status_text
-                })
+            sched_dt = datetime.strptime(scheduled_time, "%H:%M")
+            sched_dt = sched_dt.replace(year=now.year, month=now.month, day=now.day)
         except ValueError:
             continue
+
+        if time_window_start <= sched_dt <= time_window_end:
+            ferries.append({
+                "name": ferry_name,
+                "dep": scheduled_time,
+                "actual": actual_time or "--:--",
+                "status": status_text
+            })
 
     if not ferries:
         ferries = [{"note": "⚠️ 無法取得船班資料，可能為深夜或網站無回應"}]
