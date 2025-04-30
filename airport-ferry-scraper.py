@@ -5,7 +5,7 @@ import json
 
 def parse_time_str(tstr):
     try:
-        return datetime.strptime(tstr.strip(), "%H:%M").replace(
+        return datetime.strptime(tstr.strip(), "%H:%M").replace(tzinfo=now.tzinfo, 
             year=now.year, month=now.month, day=now.day
         )
     except:
