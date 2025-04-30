@@ -15,10 +15,6 @@ try:
     rows = soup.select("tr")[1:]  # skip header
 
     ferries = []
-except Exception as e:
-    print("❌ 無法取得網頁資料:", e)
-    rows = []
-    ferries = []
 
     from datetime import datetime, timedelta
 
