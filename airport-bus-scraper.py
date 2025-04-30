@@ -121,8 +121,7 @@ def main():
         }]
 
     with open("docs/data/airport-bus.json", "w", encoding="utf-8") as f:
-        json.dump(upcoming, f, ensure_ascii=False, indent=2)
-
+        
 if __name__ == "__main__":
     main()
 
@@ -131,4 +130,18 @@ now = datetime.now(timezone(timedelta(hours=8)))
 output["updated"] = now.strftime("%Y-%m-%d %H:%M:%S")
 
 import json
+print(json.dumps(output, ensure_ascii=False, indent=2))
+
+
+from datetime import datetime, timezone, timedelta
+now = datetime.now(timezone(timedelta(hours=8)))
+
+output = {
+    "buses": buses,
+    "updated": now.strftime("%Y-%m-%d %H:%M:%S")
+}
+
+with open("docs/data/airport-bus.json", "w", encoding="utf-8") as f:
+    json.dump(output, f, ensure_ascii=False, indent=2)
+
 print(json.dumps(output, ensure_ascii=False, indent=2))
