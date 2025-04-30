@@ -1,89 +1,29 @@
 {
   "ferries": [
     {
-      "name": "五通 WuTong",
-      "dep": "新金祥龍 XKXL",
-      "actual": "08:30",
-      "status": "08:21"
+      "name": "新金祥龍",
+      "sched": "08:30",
+      "actual": "08:21",
+      "icon": "✅"
     },
     {
-      "name": "五通 WuTong",
-      "dep": "新東方 XDF",
-      "actual": "09:00",
-      "status": "08:51"
+      "name": "新東方",
+      "sched": "09:00",
+      "actual": "08:51",
+      "icon": "✅"
     },
     {
-      "name": "石井 ShinJin",
-      "dep": "八方 BF",
-      "actual": "09:50",
-      "status": "09:44"
+      "name": "八方",
+      "sched": "09:50",
+      "actual": "09:44",
+      "icon": "✅"
     },
     {
-      "name": "五通 WuTong",
-      "dep": "和平新星 HP",
-      "actual": "10:00",
-      "status": "09:53"
-    },
-    {
-      "name": "五通 WuTong",
-      "dep": "金瑞龍 KRL",
-      "actual": "10:30",
-      "status": "10:19"
-    },
-    {
-      "name": "五通 WuTong",
-      "dep": "新五緣 WY",
-      "actual": "11:30",
-      "status": "11:21"
-    },
-    {
-      "name": "五通 WuTong",
-      "dep": "新金祥龍 XKXL",
-      "actual": "12:30",
-      "status": "12:22"
-    },
-    {
-      "name": "五通 WuTong",
-      "dep": "新捷安 XJA",
-      "actual": "13:30",
-      "status": ""
-    },
-    {
-      "name": "五通 WuTong",
-      "dep": "新東方 XDF",
-      "actual": "14:30",
-      "status": ""
-    },
-    {
-      "name": "五通 WuTong",
-      "dep": "和平新星 HP",
-      "actual": "15:30",
-      "status": ""
-    },
-    {
-      "name": "五通 WuTong",
-      "dep": "金瑞龍 KRL",
-      "actual": "16:30",
-      "status": ""
-    },
-    {
-      "name": "石井 ShinJin",
-      "dep": "八方 BF",
-      "actual": "16:35",
-      "status": ""
-    },
-    {
-      "name": "五通 WuTong",
-      "dep": "新五緣 WY",
-      "actual": "17:00",
-      "status": ""
-    },
-    {
-      "name": "五通 WuTong",
-      "dep": "新捷安 XJA",
-      "actual": "17:30",
-      "status": ""
+      "name": "和平新星",
+      "sched": "10:00",
+      "actual": "09:53",
+      "icon": "✅"
     }
   ],
-  "updated": "2025-04-30 13:55:27"
+  "updated": "2025-04-30 08:20:07"
 }
