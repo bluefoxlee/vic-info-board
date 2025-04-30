@@ -1,47 +1,11 @@
+
 import requests
 from bs4 import BeautifulSoup
+from datetime import datetime, timedelta
 import json
-from datetime import datetime
-import pytz
-from pathlib import Path
-
-url = "https://port.kinmen.gov.tw/kmeis/manager/tmp/realtimeshow1.php"
-
-now = datetime.now()
-start_time = now - timedelta(hours=1)
-end_time = now + timedelta(hours=2)
-try:
-    response = requests.get(url, timeout=10)
-    response.encoding = "utf-8"
-
-    soup = BeautifulSoup(response.text, "html.parser")
-    rows = soup.select("tr")[1:]  # skip header
-
-    ferries = []
-
-    
-
-    if not ferries:
-        ferries = [{"note": "⚠️ 無法取得船班資料，可能為深夜或網站無回應"}]
-
-except Exception as e:
-    ferries = [{"note": "⚠️ 無法取得船班資料，可能為深夜或網站無回應"}]
-
-updated_time = datetime.now(pytz.timezone("Asia/Taipei")).strftime("%Y-%m-%d %H:%M:%S")
-
-output = {
-    "ferries": ferries,
-    "updated": updated_time
-}
-
-Path("docs/data/airport-ferry.json").write_text(json.dumps(output, ensure_ascii=False, indent=2))
-print("✅ Saved to docs/data/airport-ferry.json")
 
 def parse_time_str(tstr):
-    now = datetime.now()
-start_time = now - timedelta(hours=1)
-end_time = now + timedelta(hours=2)
-try:
+    try:
         return datetime.strptime(tstr.strip(), "%H:%M").replace(
             year=now.year, month=now.month, day=now.day
         )
@@ -61,6 +25,19 @@ def get_icon(status):
         return "⛔"
     else:
         return "⚪"
+
+now = datetime.now()
+start_time = now - timedelta(hours=1)
+end_time = now + timedelta(hours=2)
+
+try:
+    response = requests.get("https://port.kinmen.gov.tw/kmeis/manager/tmp/realtimeshow1.php", timeout=10)
+    response.encoding = "utf-8"
+    soup = BeautifulSoup(response.text, "html.parser")
+    rows = soup.select("tr")[1:]
+except:
+    print("❌ 無法取得資料")
+    rows = []
 
 ferries = []
 
@@ -86,6 +63,7 @@ for row in rows:
         "actual": actual if actual else "--:--",
         "icon": icon
     })
+
 output = {
     "ferries": ferries,
     "updated": now.strftime("%Y-%m-%d %H:%M:%S")
