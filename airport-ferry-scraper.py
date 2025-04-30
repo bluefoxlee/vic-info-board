@@ -1,4 +1,3 @@
-
 import requests
 from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
@@ -69,5 +68,5 @@ output = {
     "updated": now.strftime("%Y-%m-%d %H:%M:%S")
 }
 
-with open("airport-ferry.json", "w", encoding="utf-8") as f:
+with open("docs/data/airport-ferry.json", "w", encoding="utf-8") as f:
     json.dump(output, f, ensure_ascii=False, indent=2)
