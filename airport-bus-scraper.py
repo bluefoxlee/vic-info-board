@@ -125,3 +125,10 @@ def main():
 
 if __name__ == "__main__":
     main()
+
+from datetime import datetime, timezone, timedelta
+now = datetime.now(timezone(timedelta(hours=8)))
+output["updated"] = now.strftime("%Y-%m-%d %H:%M:%S")
+
+import json
+print(json.dumps(output, ensure_ascii=False, indent=2))
