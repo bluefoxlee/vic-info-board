@@ -4,25 +4,25 @@
       "name": "五通 WuTong",
       "dep": "新金祥龍 XKXL",
       "actual": "08:30",
-      "status": ""
+      "status": "08:21"
     },
     {
       "name": "五通 WuTong",
       "dep": "新東方 XDF",
       "actual": "09:00",
-      "status": ""
+      "status": "08:51"
     },
     {
       "name": "石井 ShinJin",
       "dep": "八方 BF",
       "actual": "09:50",
-      "status": ""
+      "status": "09:44"
     },
     {
       "name": "五通 WuTong",
       "dep": "和平新星 HP",
       "actual": "10:00",
-      "status": ""
+      "status": "09:53"
     },
     {
       "name": "五通 WuTong",
@@ -85,5 +85,5 @@
       "status": ""
     }
   ],
-  "updated": "2025-04-30 07:53:01"
+  "updated": "2025-04-30 09:54:05"
 }
