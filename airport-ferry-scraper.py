@@ -33,20 +33,19 @@ for row in rows:
         # 去除英文簡寫
         ferry_name = raw_ferry_name.split()[0]
 
-        # 解析時間篩選條件（格式為 HH:MM）
         try:
+            # 解析時間並與當前時間進行篩選比對
             sched_dt = datetime.strptime(scheduled_time, "%H:%M").replace(
                 year=now.year, month=now.month, day=now.day)
+            if time_window_start <= sched_dt <= time_window_end:
+                ferries.append({
+                    "name": ferry_name,
+                    "dep": scheduled_time,
+                    "actual": actual_time or "--:--",
+                    "status": status_text
+                })
         except ValueError:
             continue
-
-        if time_window_start <= sched_dt <= time_window_end:
-            ferries.append({
-                "name": ferry_name,
-                "dep": scheduled_time,
-                "actual": actual_time or "--:--",
-                "status": status_text
-            })
 
     if not ferries:
         ferries = [{"note": "⚠️ 無法取得船班資料，可能為深夜或網站無回應"}]
