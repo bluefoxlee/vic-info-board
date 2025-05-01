@@ -34,6 +34,38 @@ def fetch_estimates():
         print("❌ ETA 抓取錯誤：", e)
     return all_est
 
+
+direction_map = {
+    "13": "往山外", "131": "往山外", "14": "往金城", "141": "往金城",
+    "31": "往山外", "32": "往金城",
+    "351": "往烈嶼", "352": "往山外", "364": "往山外",
+    "2711": "往沙美", "2721": "往山外"
+}
+
+
+
+def friendly_route(route_id):
+    if route_id in ["13", "131", "14", "141"]:
+        return "藍1"
+    elif route_id in ["31", "32"]:
+        return "3"
+    else:
+        return route_id
+
+
+
+def extract_eta(ests):
+    if not ests:
+        return ""
+    try:
+        eta_min = int(ests[0].get("ComeTime", -1))
+        if eta_min < 0:
+            return ""
+        return f"{eta_min}分"
+    except Exception:
+        return ""
+
+
 def main():
     print("👀 main() 開始執行")
     est = fetch_estimates()
@@ -75,7 +107,6 @@ def main():
             "eta": eta if eta else f"{schedule_time}（預定）",
             "dest": direction
         })
-            continue
 
         if not s.get("ests"):
             buses.append({
