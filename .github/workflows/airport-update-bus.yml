@@ -2,8 +2,8 @@ name: Update Bus Data
 
 on:
   schedule:
-  # 台灣時間 08:00–18:00 每 5 分鐘（UTC 00:00–10:00）
-    - cron: '*/5 0-10 * * *'
+  # 台灣時間 08:00–18:00 每 10 分鐘（UTC 00:00–10:00）
+    - cron: '*/10 0-10 * * *'
   workflow_dispatch:
 
 jobs:
