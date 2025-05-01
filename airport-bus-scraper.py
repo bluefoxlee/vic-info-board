@@ -43,7 +43,22 @@ def main():
     buses = []
     valid_count = 0
     for s in est:
-        if "民航站" not in s.get("StopName", ""):
+
+        car_no = s.get("carId", "—")
+        route_id = s.get("RouteID", "")
+        direction = direction_map.get(route_id, "")
+        if direction.startswith("往"):
+            direction = direction.replace("往", "")
+        schedule_time = s.get("schedule_time", "")
+        eta = extract_eta(s.get("ests", []))
+
+        buses.append({
+            "carNo": car_no,
+            "route": friendly_route(route_id),
+            "schedule": schedule_time,
+            "eta": eta if eta else f"{schedule_time}（預定）",
+            "dest": direction
+        })
             continue
 
         if not s.get("ests"):
