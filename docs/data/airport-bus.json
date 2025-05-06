@@ -201,25 +201,25 @@
       "dest": "往沙美"
     },
     {
-      "carNo": "—",
-      "route": "2721",
-      "schedule": "",
-      "eta": "尚無資料",
-      "dest": "山外"
-    },
-    {
-      "carNo": "—",
+      "carNo": "KKZ-8291",
       "route": "2721",
       "schedule": "",
       "eta": "（預定）",
       "dest": "山外"
     },
     {
-      "carNo": "—",
+      "carNo": "KKZ-8291",
+      "route": "2721",
+      "schedule": "",
+      "eta": "（預定）",
+      "dest": "山外"
+    },
+    {
+      "carNo": "KKZ-8291",
       "route": "27",
-      "eta": "尚無資料",
+      "eta": "3分",
       "dest": "往山外"
     }
   ],
-  "updated": "2025-05-06 11:54:05"
+  "updated": "2025-05-06 12:24:12"
 }
