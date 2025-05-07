@@ -41,23 +41,23 @@
       "dest": "往金城"
     },
     {
-      "carNo": "500-XH",
+      "carNo": "—",
+      "route": "3",
+      "schedule": "",
+      "eta": "尚無資料",
+      "dest": "山外"
+    },
+    {
+      "carNo": "—",
       "route": "3",
       "schedule": "",
       "eta": "（預定）",
       "dest": "山外"
     },
     {
-      "carNo": "500-XH",
+      "carNo": "—",
       "route": "3",
-      "schedule": "",
-      "eta": "（預定）",
-      "dest": "山外"
-    },
-    {
-      "carNo": "500-XH",
-      "route": "3",
-      "eta": "4分",
+      "eta": "尚無資料",
       "dest": "往山外"
     },
     {
@@ -181,23 +181,23 @@
       "dest": "往山外"
     },
     {
-      "carNo": "KKZ-8291",
+      "carNo": "—",
+      "route": "2711",
+      "schedule": "",
+      "eta": "尚無資料",
+      "dest": "沙美"
+    },
+    {
+      "carNo": "—",
       "route": "2711",
       "schedule": "",
       "eta": "（預定）",
       "dest": "沙美"
     },
     {
-      "carNo": "KKZ-8291",
-      "route": "2711",
-      "schedule": "",
-      "eta": "（預定）",
-      "dest": "沙美"
-    },
-    {
-      "carNo": "KKZ-8291",
+      "carNo": "—",
       "route": "27",
-      "eta": "13分",
+      "eta": "尚無資料",
       "dest": "往沙美"
     },
     {
@@ -221,5 +221,5 @@
       "dest": "往山外"
     }
   ],
-  "updated": "2025-05-07 11:15:27"
+  "updated": "2025-05-07 11:50:30"
 }
