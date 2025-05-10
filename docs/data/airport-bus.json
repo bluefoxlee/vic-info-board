@@ -1,43 +1,43 @@
 {
   "buses": [
     {
-      "carNo": "KKB-0602",
+      "carNo": "—",
+      "route": "藍1",
+      "schedule": "",
+      "eta": "尚無資料",
+      "dest": "山外"
+    },
+    {
+      "carNo": "—",
       "route": "藍1",
       "schedule": "",
       "eta": "（預定）",
       "dest": "山外"
     },
     {
-      "carNo": "KKB-0602",
+      "carNo": "—",
       "route": "藍1",
-      "schedule": "",
-      "eta": "（預定）",
-      "dest": "山外"
-    },
-    {
-      "carNo": "KKB-0602",
-      "route": "藍1",
-      "eta": "7分",
+      "eta": "尚無資料",
       "dest": "往山外"
     },
     {
-      "carNo": "EAL-1822",
+      "carNo": "—",
+      "route": "藍1",
+      "schedule": "",
+      "eta": "尚無資料",
+      "dest": "金城"
+    },
+    {
+      "carNo": "—",
       "route": "藍1",
       "schedule": "",
       "eta": "（預定）",
       "dest": "金城"
     },
     {
-      "carNo": "EAL-1822",
+      "carNo": "—",
       "route": "藍1",
-      "schedule": "",
-      "eta": "（預定）",
-      "dest": "金城"
-    },
-    {
-      "carNo": "EAL-1822",
-      "route": "藍1",
-      "eta": "12分",
+      "eta": "尚無資料",
       "dest": "往金城"
     },
     {
@@ -221,5 +221,5 @@
       "dest": "往山外"
     }
   ],
-  "updated": "2025-05-10 15:39:24"
+  "updated": "2025-05-10 15:51:27"
 }
