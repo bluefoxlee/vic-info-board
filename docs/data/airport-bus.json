@@ -97,27 +97,27 @@
     {
       "carNo": "EAA-022",
       "route": "藍1",
-      "eta": "16分",
+      "eta": "4分",
       "dest": "往山外"
     },
     {
-      "carNo": "EAL-1831",
+      "carNo": "—",
+      "route": "藍1",
+      "schedule": "",
+      "eta": "尚無資料",
+      "dest": "金城"
+    },
+    {
+      "carNo": "—",
       "route": "藍1",
       "schedule": "",
       "eta": "（預定）",
       "dest": "金城"
     },
     {
-      "carNo": "EAL-1831",
+      "carNo": "—",
       "route": "藍1",
-      "schedule": "",
-      "eta": "（預定）",
-      "dest": "金城"
-    },
-    {
-      "carNo": "EAL-1831",
-      "route": "藍1",
-      "eta": "7分",
+      "eta": "尚無資料",
       "dest": "往金城"
     },
     {
@@ -221,5 +221,5 @@
       "dest": "往山外"
     }
   ],
-  "updated": "2025-05-15 17:45:52"
+  "updated": "2025-05-15 17:57:55"
 }
