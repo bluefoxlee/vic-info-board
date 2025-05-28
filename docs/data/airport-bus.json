@@ -1,123 +1,123 @@
 {
   "buses": [
     {
-      "carNo": "—",
-      "route": "藍1",
-      "schedule": "",
-      "eta": "尚無資料",
-      "dest": "山外"
-    },
-    {
-      "carNo": "—",
+      "carNo": "393-XH",
       "route": "藍1",
       "schedule": "",
       "eta": "（預定）",
       "dest": "山外"
     },
     {
-      "carNo": "—",
-      "route": "藍1",
-      "eta": "尚無資料",
-      "dest": "往山外"
-    },
-    {
-      "carNo": "—",
-      "route": "藍1",
-      "schedule": "",
-      "eta": "尚無資料",
-      "dest": "金城"
-    },
-    {
-      "carNo": "—",
-      "route": "藍1",
-      "schedule": "",
-      "eta": "（預定）",
-      "dest": "金城"
-    },
-    {
-      "carNo": "—",
-      "route": "藍1",
-      "eta": "尚無資料",
-      "dest": "往金城"
-    },
-    {
-      "carNo": "—",
-      "route": "3",
-      "schedule": "",
-      "eta": "尚無資料",
-      "dest": "山外"
-    },
-    {
-      "carNo": "—",
-      "route": "3",
-      "schedule": "",
-      "eta": "（預定）",
-      "dest": "山外"
-    },
-    {
-      "carNo": "—",
-      "route": "3",
-      "eta": "尚無資料",
-      "dest": "往山外"
-    },
-    {
-      "carNo": "—",
-      "route": "3",
-      "schedule": "",
-      "eta": "尚無資料",
-      "dest": "金城"
-    },
-    {
-      "carNo": "—",
-      "route": "3",
-      "schedule": "",
-      "eta": "（預定）",
-      "dest": "金城"
-    },
-    {
-      "carNo": "—",
-      "route": "3",
-      "eta": "尚無資料",
-      "dest": "往金城"
-    },
-    {
-      "carNo": "360-XH",
+      "carNo": "393-XH",
       "route": "藍1",
       "schedule": "",
       "eta": "（預定）",
       "dest": "山外"
     },
     {
-      "carNo": "360-XH",
-      "route": "藍1",
-      "schedule": "",
-      "eta": "（預定）",
-      "dest": "山外"
-    },
-    {
-      "carNo": "360-XH",
+      "carNo": "393-XH",
       "route": "藍1",
       "eta": "4分",
       "dest": "往山外"
     },
     {
-      "carNo": "393-XH",
+      "carNo": "360-XH",
       "route": "藍1",
       "schedule": "",
       "eta": "（預定）",
       "dest": "金城"
     },
     {
-      "carNo": "393-XH",
+      "carNo": "360-XH",
       "route": "藍1",
       "schedule": "",
       "eta": "（預定）",
       "dest": "金城"
     },
     {
-      "carNo": "393-XH",
+      "carNo": "360-XH",
       "route": "藍1",
-      "eta": "3分",
+      "eta": "8分",
+      "dest": "往金城"
+    },
+    {
+      "carNo": "—",
+      "route": "3",
+      "schedule": "",
+      "eta": "尚無資料",
+      "dest": "山外"
+    },
+    {
+      "carNo": "—",
+      "route": "3",
+      "schedule": "",
+      "eta": "（預定）",
+      "dest": "山外"
+    },
+    {
+      "carNo": "—",
+      "route": "3",
+      "eta": "尚無資料",
+      "dest": "往山外"
+    },
+    {
+      "carNo": "—",
+      "route": "3",
+      "schedule": "",
+      "eta": "尚無資料",
+      "dest": "金城"
+    },
+    {
+      "carNo": "—",
+      "route": "3",
+      "schedule": "",
+      "eta": "（預定）",
+      "dest": "金城"
+    },
+    {
+      "carNo": "—",
+      "route": "3",
+      "eta": "尚無資料",
+      "dest": "往金城"
+    },
+    {
+      "carNo": "—",
+      "route": "藍1",
+      "schedule": "",
+      "eta": "尚無資料",
+      "dest": "山外"
+    },
+    {
+      "carNo": "—",
+      "route": "藍1",
+      "schedule": "",
+      "eta": "（預定）",
+      "dest": "山外"
+    },
+    {
+      "carNo": "—",
+      "route": "藍1",
+      "eta": "尚無資料",
+      "dest": "往山外"
+    },
+    {
+      "carNo": "—",
+      "route": "藍1",
+      "schedule": "",
+      "eta": "尚無資料",
+      "dest": "金城"
+    },
+    {
+      "carNo": "—",
+      "route": "藍1",
+      "schedule": "",
+      "eta": "（預定）",
+      "dest": "金城"
+    },
+    {
+      "carNo": "—",
+      "route": "藍1",
+      "eta": "尚無資料",
       "dest": "往金城"
     },
     {
@@ -161,23 +161,23 @@
       "dest": "往山外"
     },
     {
-      "carNo": "391-XH",
+      "carNo": "—",
+      "route": "364",
+      "schedule": "",
+      "eta": "尚無資料",
+      "dest": "山外"
+    },
+    {
+      "carNo": "—",
       "route": "364",
       "schedule": "",
       "eta": "（預定）",
       "dest": "山外"
     },
     {
-      "carNo": "391-XH",
-      "route": "364",
-      "schedule": "",
-      "eta": "（預定）",
-      "dest": "山外"
-    },
-    {
-      "carNo": "391-XH",
+      "carNo": "—",
       "route": "36",
-      "eta": "2分",
+      "eta": "尚無資料",
       "dest": "往山外"
     },
     {
@@ -221,5 +221,5 @@
       "dest": "往山外"
     }
   ],
-  "updated": "2025-05-28 07:48:38"
+  "updated": "2025-05-28 08:41:43"
 }
