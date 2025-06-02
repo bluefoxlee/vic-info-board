@@ -1,43 +1,43 @@
 {
   "buses": [
     {
-      "carNo": "353-XH",
+      "carNo": "378-XH",
       "route": "藍1",
       "schedule": "",
       "eta": "（預定）",
       "dest": "山外"
     },
     {
-      "carNo": "353-XH",
+      "carNo": "378-XH",
       "route": "藍1",
       "schedule": "",
       "eta": "（預定）",
       "dest": "山外"
+    },
+    {
+      "carNo": "378-XH",
+      "route": "藍1",
+      "eta": "5分",
+      "dest": "往山外"
+    },
+    {
+      "carNo": "353-XH",
+      "route": "藍1",
+      "schedule": "",
+      "eta": "（預定）",
+      "dest": "金城"
+    },
+    {
+      "carNo": "353-XH",
+      "route": "藍1",
+      "schedule": "",
+      "eta": "（預定）",
+      "dest": "金城"
     },
     {
       "carNo": "353-XH",
       "route": "藍1",
       "eta": "6分",
-      "dest": "往山外"
-    },
-    {
-      "carNo": "378-XH",
-      "route": "藍1",
-      "schedule": "",
-      "eta": "（預定）",
-      "dest": "金城"
-    },
-    {
-      "carNo": "378-XH",
-      "route": "藍1",
-      "schedule": "",
-      "eta": "（預定）",
-      "dest": "金城"
-    },
-    {
-      "carNo": "378-XH",
-      "route": "藍1",
-      "eta": "8分",
       "dest": "往金城"
     },
     {
@@ -221,5 +221,5 @@
       "dest": "往山外"
     }
   ],
-  "updated": "2025-06-02 10:41:10"
+  "updated": "2025-06-02 11:43:19"
 }
