@@ -41,23 +41,23 @@
       "dest": "往金城"
     },
     {
-      "carNo": "EAA-015",
+      "carNo": "—",
+      "route": "3",
+      "schedule": "",
+      "eta": "尚無資料",
+      "dest": "山外"
+    },
+    {
+      "carNo": "—",
       "route": "3",
       "schedule": "",
       "eta": "（預定）",
       "dest": "山外"
     },
     {
-      "carNo": "EAA-015",
+      "carNo": "—",
       "route": "3",
-      "schedule": "",
-      "eta": "（預定）",
-      "dest": "山外"
-    },
-    {
-      "carNo": "EAA-015",
-      "route": "3",
-      "eta": "5分",
+      "eta": "尚無資料",
       "dest": "往山外"
     },
     {
@@ -221,5 +221,5 @@
       "dest": "往山外"
     }
   ],
-  "updated": "2025-06-07 15:15:19"
+  "updated": "2025-06-07 15:30:33"
 }
