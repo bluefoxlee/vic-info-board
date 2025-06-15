@@ -97,27 +97,27 @@
     {
       "carNo": "395-XH",
       "route": "藍1",
-      "eta": "16分",
+      "eta": "3分",
       "dest": "往山外"
     },
     {
-      "carNo": "KKB-0603",
+      "carNo": "—",
+      "route": "藍1",
+      "schedule": "",
+      "eta": "尚無資料",
+      "dest": "金城"
+    },
+    {
+      "carNo": "—",
       "route": "藍1",
       "schedule": "",
       "eta": "（預定）",
       "dest": "金城"
     },
     {
-      "carNo": "KKB-0603",
+      "carNo": "—",
       "route": "藍1",
-      "schedule": "",
-      "eta": "（預定）",
-      "dest": "金城"
-    },
-    {
-      "carNo": "KKB-0603",
-      "route": "藍1",
-      "eta": "5分",
+      "eta": "尚無資料",
       "dest": "往金城"
     },
     {
@@ -221,5 +221,5 @@
       "dest": "往山外"
     }
   ],
-  "updated": "2025-06-15 17:42:52"
+  "updated": "2025-06-15 17:54:40"
 }
