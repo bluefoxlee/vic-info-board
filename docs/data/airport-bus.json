@@ -1,23 +1,23 @@
 {
   "buses": [
     {
-      "carNo": "KKB-0603",
+      "carNo": "—",
+      "route": "藍1",
+      "schedule": "",
+      "eta": "尚無資料",
+      "dest": "山外"
+    },
+    {
+      "carNo": "—",
       "route": "藍1",
       "schedule": "",
       "eta": "（預定）",
       "dest": "山外"
     },
     {
-      "carNo": "KKB-0603",
+      "carNo": "—",
       "route": "藍1",
-      "schedule": "",
-      "eta": "（預定）",
-      "dest": "山外"
-    },
-    {
-      "carNo": "KKB-0603",
-      "route": "藍1",
-      "eta": "0分",
+      "eta": "尚無資料",
       "dest": "往山外"
     },
     {
@@ -221,5 +221,5 @@
       "dest": "往山外"
     }
   ],
-  "updated": "2025-06-15 16:46:52"
+  "updated": "2025-06-15 16:59:03"
 }
