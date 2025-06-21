@@ -81,43 +81,43 @@
       "dest": "往金城"
     },
     {
-      "carNo": "EAA-019",
+      "carNo": "—",
+      "route": "藍1",
+      "schedule": "",
+      "eta": "尚無資料",
+      "dest": "山外"
+    },
+    {
+      "carNo": "—",
       "route": "藍1",
       "schedule": "",
       "eta": "（預定）",
       "dest": "山外"
     },
     {
-      "carNo": "EAA-019",
+      "carNo": "—",
       "route": "藍1",
-      "schedule": "",
-      "eta": "（預定）",
-      "dest": "山外"
-    },
-    {
-      "carNo": "EAA-019",
-      "route": "藍1",
-      "eta": "13分",
+      "eta": "尚無資料",
       "dest": "往山外"
     },
     {
-      "carNo": "393-XH",
+      "carNo": "—",
+      "route": "藍1",
+      "schedule": "",
+      "eta": "尚無資料",
+      "dest": "金城"
+    },
+    {
+      "carNo": "—",
       "route": "藍1",
       "schedule": "",
       "eta": "（預定）",
       "dest": "金城"
     },
     {
-      "carNo": "393-XH",
+      "carNo": "—",
       "route": "藍1",
-      "schedule": "",
-      "eta": "（預定）",
-      "dest": "金城"
-    },
-    {
-      "carNo": "393-XH",
-      "route": "藍1",
-      "eta": "12分",
+      "eta": "尚無資料",
       "dest": "往金城"
     },
     {
@@ -177,7 +177,7 @@
     {
       "carNo": "392-XH",
       "route": "36",
-      "eta": "13分",
+      "eta": "1分",
       "dest": "往山外"
     },
     {
@@ -221,5 +221,5 @@
       "dest": "往山外"
     }
   ],
-  "updated": "2025-06-22 07:37:19"
+  "updated": "2025-06-22 07:49:24"
 }
