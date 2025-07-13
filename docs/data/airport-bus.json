@@ -1,43 +1,43 @@
 {
   "buses": [
     {
-      "carNo": "EAA-020",
+      "carNo": "—",
+      "route": "藍1",
+      "schedule": "",
+      "eta": "尚無資料",
+      "dest": "山外"
+    },
+    {
+      "carNo": "—",
       "route": "藍1",
       "schedule": "",
       "eta": "（預定）",
       "dest": "山外"
     },
     {
-      "carNo": "EAA-020",
+      "carNo": "—",
       "route": "藍1",
-      "schedule": "",
-      "eta": "（預定）",
-      "dest": "山外"
-    },
-    {
-      "carNo": "EAA-020",
-      "route": "藍1",
-      "eta": "5分",
+      "eta": "尚無資料",
       "dest": "往山外"
     },
     {
-      "carNo": "KKB-0601",
+      "carNo": "—",
+      "route": "藍1",
+      "schedule": "",
+      "eta": "尚無資料",
+      "dest": "金城"
+    },
+    {
+      "carNo": "—",
       "route": "藍1",
       "schedule": "",
       "eta": "（預定）",
       "dest": "金城"
     },
     {
-      "carNo": "KKB-0601",
+      "carNo": "—",
       "route": "藍1",
-      "schedule": "",
-      "eta": "（預定）",
-      "dest": "金城"
-    },
-    {
-      "carNo": "KKB-0601",
-      "route": "藍1",
-      "eta": "7分",
+      "eta": "尚無資料",
       "dest": "往金城"
     },
     {
@@ -201,25 +201,25 @@
       "dest": "往沙美"
     },
     {
-      "carNo": "—",
-      "route": "2721",
-      "schedule": "",
-      "eta": "尚無資料",
-      "dest": "山外"
-    },
-    {
-      "carNo": "—",
+      "carNo": "KKZ-8291",
       "route": "2721",
       "schedule": "",
       "eta": "（預定）",
       "dest": "山外"
     },
     {
-      "carNo": "—",
+      "carNo": "KKZ-8291",
+      "route": "2721",
+      "schedule": "",
+      "eta": "（預定）",
+      "dest": "山外"
+    },
+    {
+      "carNo": "KKZ-8291",
       "route": "27",
-      "eta": "尚無資料",
+      "eta": "3分",
       "dest": "往山外"
     }
   ],
-  "updated": "2025-07-13 11:41:35"
+  "updated": "2025-07-13 12:25:08"
 }
