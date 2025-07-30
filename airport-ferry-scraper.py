@@ -4,6 +4,9 @@ from datetime import datetime, timedelta
 import json
 
 URL = "https://port.kinmen.gov.tw/kmeis/manager/tmp/realtimeshow1.php"
+HEADERS = {
+    "User-Agent": "Mozilla/5.0"
+}
 
 def get_icon(status):
     if "安檢" in status:
@@ -19,66 +22,59 @@ def get_icon(status):
     else:
         return "⚪"
 
-try:
-    response = requests.get(URL, verify=False, timeout=10)
-    response.encoding = "utf-8"
-    soup = BeautifulSoup(response.text, "html.parser")
-except Exception:
-    print("❌ 無法取得資料")
-    exit()
-
-rows = soup.find_all("tr")[1:]
-now = datetime.now()
-window_start = now - timedelta(hours=1)
-window_end = now + timedelta(hours=2)
-
-result = []
-
-for row in rows:
-    cols = row.find_all("td")
-    if len(cols) < 6:
-        continue
-
-    dep_time_str = cols[0].text.strip()[:5]
-    name = cols[1].text.strip().split(" ")[0]  # 去除英文
-    destination = cols[2].text.strip()
-    schedule_time = cols[3].text.strip()[:5]
-    actual_time = cols[4].text.strip()[:5]
-    status_raw = cols[5].text.strip()
-
-    # 預定時間
+def fetch_ferry_data():
     try:
-        dep_time = datetime.strptime(dep_time_str, "%H:%M").replace(
-            year=now.year, month=now.month, day=now.day
-        )
-    except:
-        continue
+        response = requests.get(URL, headers=HEADERS, timeout=10, verify=False)
+        response.encoding = "utf-8"  # 確保中文字不亂碼
+    except Exception as e:
+        print(f"❌ Failed to fetch data: {e}")
+        return []
 
-    # 若跨日修正
-    if dep_time < window_start:
-        dep_time += timedelta(days=1)
+    soup = BeautifulSoup(response.text, "html.parser")
+    rows = soup.select("table tr")[1:]  # 跳過表頭
 
-    if window_start <= dep_time <= window_end:
-        status = (
-            "已離港" if "離港" in status_raw
-            else "準時" if "準時" in status_raw
-            else "延誤" if "延誤" in status_raw
-            else "安檢中" if "安檢" in status_raw
-            else "停航" if "停航" in status_raw
-            else status_raw
-        )
+    ferry_data = []
+    for row in rows:
+        cols = row.find_all("td")
+        if len(cols) < 6:
+            continue
 
-        actual_display = actual_time if actual_time else "--:--"
+        name = cols[1].text.strip()
+        scheduled_time = cols[2].text.strip()
+        actual_time = cols[3].text.strip()
+        status_raw = cols[4].text.strip()
+        status = status_raw.split()[0] if status_raw else "未知"
 
-        result.append({
+        if actual_time == "":
+            actual_time = "--:--"
+            status = "準時"
+
+        ferry_data.append({
             "name": name,
-            "dep": schedule_time,
-            "actual": actual_display,
-            "status": status,
-            "icon": get_icon(status)
+            "dep": scheduled_time,
+            "actual": actual_time,
+            "status": f"{get_icon(status)} {status}"
         })
 
-print(f"✅ 篩選後共 {len(result)} 筆")
+    return ferry_data
 
-with open("docs/data/airport-ferry.json", "w", encoding="utf-8") as f:
-    json.dump({"updated": now.strftime("%Y-%m-%d %H:%M:%S"), "ferries": result}, f, ensure_ascii=False, indent=2)
+def save_json(data, path):
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f, ensure_ascii=False, indent=2)
+
+def main():
+    ferries = fetch_ferry_data()
+
+    # ➕ 台灣時間：UTC+8
+    now = datetime.utcnow() + timedelta(hours=8)
+
+    result = {
+        "updated": now.strftime("%Y-%m-%d %H:%M:%S"),
+        "ferries": ferries
+    }
+
+    save_json(result, "docs/data/airport-ferry.json")
+    print("✅ Saved to docs/data/airport-ferry.json")
+
+if __name__ == "__main__":
+    main()
