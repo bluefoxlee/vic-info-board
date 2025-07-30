@@ -3,13 +3,7 @@ from bs4 import BeautifulSoup
 from datetime import datetime, timedelta
 import json
 
-def parse_time_str(tstr):
-    try:
-        return datetime.strptime(tstr.strip(), "%H:%M").replace(tzinfo=now.tzinfo, 
-            year=now.year, month=now.month, day=now.day
-        )
-    except:
-        return None
+URL = "https://port.kinmen.gov.tw/kmeis/manager/tmp/realtimeshow1.php"
 
 def get_icon(status):
     if "安檢" in status:
@@ -25,49 +19,66 @@ def get_icon(status):
     else:
         return "⚪"
 
-from datetime import timezone
-now = datetime.now(timezone(timedelta(hours=8)))
-start_time = now - timedelta(hours=1)
-end_time = now + timedelta(hours=2)
-
 try:
-    response = requests.get("https://port.kinmen.gov.tw/kmeis/manager/tmp/realtimeshow1.php", timeout=10)
+    response = requests.get(URL, verify=False, timeout=10)
     response.encoding = "utf-8"
     soup = BeautifulSoup(response.text, "html.parser")
-    rows = soup.select("tr")[1:]
-except:
+except Exception:
     print("❌ 無法取得資料")
-    rows = []
+    exit()
 
-ferries = []
+rows = soup.find_all("tr")[1:]
+now = datetime.now()
+window_start = now - timedelta(hours=1)
+window_end = now + timedelta(hours=2)
+
+result = []
 
 for row in rows:
     cols = row.find_all("td")
     if len(cols) < 6:
         continue
 
-    raw_name = cols[1].get_text(strip=True)
-    name = raw_name.split()[0]
-    sched = cols[3].get_text(strip=True)
-    sched_time = parse_time_str(sched)
-    if sched_time is None or not (start_time <= sched_time <= end_time):
+    dep_time_str = cols[0].text.strip()[:5]
+    name = cols[1].text.strip().split(" ")[0]  # 去除英文
+    destination = cols[2].text.strip()
+    schedule_time = cols[3].text.strip()[:5]
+    actual_time = cols[4].text.strip()[:5]
+    status_raw = cols[5].text.strip()
+
+    # 預定時間
+    try:
+        dep_time = datetime.strptime(dep_time_str, "%H:%M").replace(
+            year=now.year, month=now.month, day=now.day
+        )
+    except:
         continue
 
-    actual = cols[4].get_text(strip=True)
-    status_text = cols[5].get_text(strip=True)
-    icon = get_icon(status_text)
+    # 若跨日修正
+    if dep_time < window_start:
+        dep_time += timedelta(days=1)
 
-    ferries.append({
-        "name": name,
-        "sched": sched,
-        "actual": actual if actual else "--:--",
-        "icon": icon
-    })
+    if window_start <= dep_time <= window_end:
+        status = (
+            "已離港" if "離港" in status_raw
+            else "準時" if "準時" in status_raw
+            else "延誤" if "延誤" in status_raw
+            else "安檢中" if "安檢" in status_raw
+            else "停航" if "停航" in status_raw
+            else status_raw
+        )
 
-output = {
-    "ferries": ferries,
-    "updated": now.strftime("%Y-%m-%d %H:%M:%S")
-}
+        actual_display = actual_time if actual_time else "--:--"
+
+        result.append({
+            "name": name,
+            "dep": schedule_time,
+            "actual": actual_display,
+            "status": status,
+            "icon": get_icon(status)
+        })
+
+print(f"✅ 篩選後共 {len(result)} 筆")
 
 with open("docs/data/airport-ferry.json", "w", encoding="utf-8") as f:
-    json.dump(output, f, ensure_ascii=False, indent=2)
+    json.dump({"updated": now.strftime("%Y-%m-%d %H:%M:%S"), "ferries": result}, f, ensure_ascii=False, indent=2)
