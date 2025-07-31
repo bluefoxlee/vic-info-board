@@ -3,6 +3,10 @@ from bs4 import BeautifulSoup
 import json
 from datetime import datetime, timedelta
 
+headers = {
+    "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+    "Referer": "https://port.kinmen.gov.tw/"
+}
 URL = "https://port.kinmen.gov.tw/kmeis/manager/tmp/realtimeshow1.php"
 
 def get_icon(status):
@@ -21,7 +25,7 @@ def get_icon(status):
 
 def fetch_ferry_data():
     try:
-        res = requests.get(URL, timeout=10)
+        res = requests.get(URL, headers=headers, timeout=10, verify=False)
         res.encoding = "utf-8"  # 正確設定編碼
         soup = BeautifulSoup(res.text, "html.parser")
 
