@@ -61,7 +61,21 @@ try:
         actual = cols[4].get_text(strip=True)
         status_text = cols[5].get_text(strip=True)
         icon = get_icon(status_text)
-        status = f"{icon} {status_text[:2]}"  # 只取「離港」、「安檢」等兩字
+        status_text_clean = status_text.strip()
+        if "已離港" in status_text_clean:
+            status_text_clean = "離港"
+        elif "安檢" in status_text_clean:
+            status_text_clean = "安檢"
+        elif "準時" in status_text_clean:
+            status_text_clean = "準時"
+        elif "延誤" in status_text_clean:
+            status_text_clean = "延誤"
+        elif "停航" in status_text_clean:
+            status_text_clean = "停航"
+        else:
+            status_text_clean = "狀態未知"
+            
+        status = f"{get_icon(status_text_clean)} {status_text_clean}"  # 只取「離港」、「安檢」等兩字
 
         ferries.append({
             "name": name,
