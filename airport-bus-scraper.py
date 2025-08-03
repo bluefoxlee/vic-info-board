@@ -1,145 +1,77 @@
-from datetime import datetime, timedelta, timezone
 import requests
 import json
 import os
+from datetime import datetime
 
-routes_info = {
-    "13": {"label": "藍1", "direction": "往山外"},
-    "131": {"label": "藍1", "direction": "往山外"},
-    "14": {"label": "藍1", "direction": "往金城"},
-    "141": {"label": "藍1", "direction": "往金城"},
-    "31": {"label": "3", "direction": "往山外"},
-    "32": {"label": "3", "direction": "往金城"},
-    "2711": {"label": "27", "direction": "往沙美"},
-    "2721": {"label": "27", "direction": "往山外"},
-    "351": {"label": "35", "direction": "往烈嶼"},
-    "352": {"label": "35", "direction": "往山外"},
-    "364": {"label": "36", "direction": "往山外"},
-}
+# 停靠民航站且顯示方向為山外的路線
+ROUTE_IDS = ["13", "131", "14", "141"]
+STOP_NAME = "民航站"
+DEST_KEYWORDS = {"13": "山外", "131": "山外", "14": "金城", "141": "金城"}
 
-def fetch_estimates():
-    all_est = []
-    route_ids = ",".join(routes_info.keys())
-    url = f"https://ebus.kinmen.gov.tw/xmlbus4/GetEstimateTime.json?routeIds={route_ids}"
+def fetch_estimate_data():
+    url = f"https://ebus.kinmen.gov.tw/xmlbus4/GetEstimateTime.json?routeIds={','.join(ROUTE_IDS)}"
     try:
-        res = requests.get(url, verify=False, timeout=10)
-        data = res.json()
-        for rid, stop_list in data.items():
-            for stop in stop_list:
-                if "民航站" not in stop.get("StopName", ""):
-                    continue
-                stop["RouteID"] = rid
-                all_est.append(stop)
+        response = requests.get(url, verify=False, timeout=10)
+        return response.json()
     except Exception as e:
-        print("❌ ETA 抓取錯誤：", e)
-    return all_est
+        print(f"❌ Error fetching estimate data: {e}")
+        return {}
 
+def parse_data(data):
+    output = []
+    for route_id in ROUTE_IDS:
+        stops = data.get(route_id, [])
+        for stop in stops:
+            stop_name = stop.get("StopName", "")
+            go_back = str(stop.get("GoBack", ""))
+            if stop_name != STOP_NAME or go_back not in ("1", "2"):
+                continue
 
-direction_map = {
-    "13": "往山外", "131": "往山外", "14": "往金城", "141": "往金城",
-    "31": "往山外", "32": "往金城",
-    "351": "往烈嶼", "352": "往山外", "364": "往山外",
-    "2711": "往沙美", "2721": "往山外"
-}
+            # 找出 ests 資料
+            ests = stop.get("ests", [])
+            if not ests:
+                continue
 
+            for est in ests:
+                car_no = est.get("carid", "").strip()
+                countdown = est.get("est", None)
+                schedule = stop.get("comeTime", "") or "--:--"
 
+                if not car_no:
+                    continue
 
-def friendly_route(route_id):
-    if route_id in ["13", "131", "14", "141"]:
-        return "藍1"
-    elif route_id in ["31", "32"]:
-        return "3"
-    else:
-        return route_id
+                # 判斷方向
+                dest = DEST_KEYWORDS.get(route_id, "")
+                if not dest:
+                    continue
 
+                eta = f"{countdown}分" if isinstance(countdown, int) else "--"
 
+                # 避免重複
+                exists = any(x["carNo"] == car_no for x in output)
+                if exists:
+                    continue
 
-def extract_eta(ests):
-    if not ests:
-        return ""
-    try:
-        eta_min = int(ests[0].get("ComeTime", -1))
-        if eta_min < 0:
-            return ""
-        return f"{eta_min}分"
-    except Exception:
-        return ""
-
+                output.append({
+                    "carNo": car_no,
+                    "route": "藍1",
+                    "eta": eta,
+                    "dest": dest,
+                    "schedule": schedule,
+                })
+    return output
 
 def main():
     print("👀 main() 開始執行")
-    est = fetch_estimates()
-    print(f"📦 預估資料數量：{len(est)}")
-
-    buses = []
-    valid_count = 0
-    
-    for s in est:
-        route_id = s.get("RouteID", "")
-        direction = direction_map.get(route_id, "").replace("往", "")
-
-        if not s.get("ests"):
-            eta = "尚無資料"
-            car_no = "—"
-        else:
-            eta = extract_eta(s["ests"])
-            car_no = s.get("carId", "—")
-
-        schedule_time = s.get("schedule_time", "")
-        buses.append({
-            "carNo": car_no,
-            "route": friendly_route(route_id),
-            "schedule": schedule_time,
-            "eta": eta if eta else f"{schedule_time}（預定）",
-            "dest": direction
-        })
-        route_id = s.get("RouteID", "")
-        direction = direction_map.get(route_id, "")
-        if direction.startswith("往"):
-            direction = direction.replace("往", "")
-        schedule_time = s.get("schedule_time", "")
-        eta = extract_eta(s.get("ests", []))
-
-        buses.append({
-            "carNo": car_no,
-            "route": friendly_route(route_id),
-            "schedule": schedule_time,
-            "eta": eta if eta else f"{schedule_time}（預定）",
-            "dest": direction
-        })
-
-        if not s.get("ests"):
-            buses.append({
-                "carNo": "—",
-                "route": routes_info.get(s.get("RouteID", ""), {}).get("label", "❓"),
-                "eta": "尚無資料",
-                "dest": routes_info.get(s.get("RouteID", ""), {}).get("direction", "❓")
-            })
-            continue  # ❗ 跳過 est_entry 處理
-
-        for est_entry in s.get("ests", []):
-            car_id = est_entry.get("carid", "🚍")
-            est_min = est_entry.get("est")
-            buses.append({
-                "carNo": car_id,
-                "route": routes_info.get(s.get("RouteID", ""), {}).get("label", "❓"),
-                "eta": f"{est_min}分" if est_min is not None else "未發車",
-                "dest": routes_info.get(s.get("RouteID", ""), {}).get("direction", "❓")
-            })
-
-    now = datetime.now(timezone(timedelta(hours=8)))
-    output = {
-        "buses": buses,
-        "updated": now.strftime("%Y-%m-%d %H:%M:%S")
-    }
+    data = fetch_estimate_data()
+    output = parse_data(data)
 
     os.makedirs("docs/data", exist_ok=True)
     with open("docs/data/airport-bus.json", "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print("📁 寫入 airport-bus.json 完成")
+    print("📁 寫入 docs/data/airport-bus.json 完成")
     print("✅ airport-bus.json updated")
-    print(json.dumps(output, ensure_ascii=False, indent=2))
 
 if __name__ == "__main__":
     main()
