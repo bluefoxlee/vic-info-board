@@ -28,55 +28,55 @@
     "schedule": "17:49"
   },
   {
-    "carNo": "358-XH",
-    "route": "3",
-    "eta": "（預定）",
-    "dest": "山外",
-    "schedule": "14:21"
-  },
-  {
     "carNo": "353-XH",
     "route": "3",
-    "eta": "（預定）",
-    "dest": "金城",
-    "schedule": "14:14"
+    "eta": "8分",
+    "dest": "",
+    "schedule": "15:21"
+  },
+  {
+    "carNo": "358-XH",
+    "route": "3",
+    "eta": "3分",
+    "dest": "",
+    "schedule": "15:14"
   },
   {
     "carNo": "—",
     "route": "27",
     "eta": "尚無資料",
-    "dest": "沙美",
+    "dest": "",
     "schedule": ""
   },
   {
     "carNo": "—",
     "route": "27",
     "eta": "尚無資料",
-    "dest": "山外",
+    "dest": "",
     "schedule": ""
   },
   {
     "carNo": "—",
     "route": "35",
     "eta": "尚無資料",
-    "dest": "烈嶼",
+    "dest": "",
     "schedule": ""
   },
   {
     "carNo": "—",
     "route": "35",
     "eta": "尚無資料",
-    "dest": "山外",
+    "dest": "",
     "schedule": ""
   },
   {
     "carNo": "—",
     "route": "36",
     "eta": "尚無資料",
-    "dest": "山外",
+    "dest": "",
     "schedule": ""
   },
   {
-    "updated": "2025-08-03 05:53:52"
+    "updated": "2025-08-03 06:11:04"
   }
 ]
