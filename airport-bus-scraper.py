@@ -1,77 +1,104 @@
-# airport-bus-scraper-v47.py
-
+# airport-bus-scraper-v48.py
+from datetime import datetime
 import requests
 import json
-from datetime import datetime
+import os
+import urllib3
 
-# 金門站牌代碼與對應路線整理
-bus_routes = {
+urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
+
+STOP_NAME = "民航站"
+
+ROUTES = {
     "藍1_山外": ["13", "131"],
     "藍1_金城": ["14", "141"],
     "3": ["31", "32"],
     "27": ["2711", "2721"],
     "35": ["351", "352"],
-    "36": ["364"]
+    "36": ["364"],
 }
 
-stop_name = "民航站"
+DEST_MAPPING = {
+    "藍1_山外": "山外",
+    "藍1_金城": "金城",
+    "3": ["山外", "金城"],
+    "27": ["沙美", "山外"],
+    "35": ["烈嶼", "山外"],
+    "36": "山外",
+}
 
 def fetch_estimates(route_ids):
-    ids = ",".join(route_ids)
-    url = f"https://ebus.kinmen.gov.tw/xmlbus4/GetEstimateTime.json?routeIds={ids}"
+    url = f"https://ebus.kinmen.gov.tw/xmlbus4/GetEstimateTime.json?routeIds={','.join(route_ids)}"
     try:
-        res = requests.get(url, verify=False, timeout=10)
-        data = res.json()
-        return data
+        response = requests.get(url, verify=False, timeout=10)
+        if response.status_code == 200:
+            return response.json()
     except Exception as e:
-        print(f"❌ 無法取得資料：{e}")
-        return {}
+        print(f"❌ Error fetching {route_ids}: {e}")
+    return {}
 
-def extract_for_airport(data, label):
-    output = []
-    for route_id in data:
-        for stop in data[route_id]:
-            if stop["StopName"] != stop_name:
-                continue
-            dest = stop.get("GoBackText", "").replace("往", "").strip()
-            car_id = stop.get("carId", "—").strip() or "—"
-            schedule = stop.get("comeTime", "").strip()
-            est_list = stop.get("ests", [])
-            if est_list:
-                est_info = est_list[0]
-                countdown = est_info.get("countdowntime", None)
-                eta = f"{round(countdown/60)}分" if countdown is not None else "—"
-            else:
-                eta = "（預定）" if schedule else "尚無資料"
-            output.append({
-                "carNo": car_id,
-                "route": label,
-                "eta": eta,
-                "dest": dest,
-                "schedule": schedule
-            })
-    return output
+def parse_bus_data():
+    result = []
+
+    for route_label, route_ids in ROUTES.items():
+        print(f"🔍 處理 {route_label}")
+        data = fetch_estimates(route_ids)
+
+        for rid in route_ids:
+            stops = data.get(rid, [])
+            for stop in stops:
+                if stop.get("StopName") != STOP_NAME:
+                    continue
+
+                car_no = stop.get("carId", "—")
+                ests = stop.get("ests", [])
+                come_time = stop.get("comeTime", "")
+                eta = ""
+
+                if ests and isinstance(ests, list) and "countdowntime" in ests[0]:
+                    mins = round(ests[0]["countdowntime"] / 60)
+                    eta = f"{mins}分"
+                elif come_time:
+                    eta = "（預定）"
+                else:
+                    eta = "尚無資料"
+
+                schedule = come_time if eta == "（預定）" else ""
+
+                # 顯示路線名稱
+                if "藍1" in route_label:
+                    route_display = "藍1"
+                    dest = DEST_MAPPING[route_label]
+                elif route_label == "3":
+                    route_display = "3"
+                    dest = DEST_MAPPING["3"][0 if "金城" in stop.get("comeTime", "") else 1]
+                else:
+                    route_display = route_label
+                    dest_opts = DEST_MAPPING.get(route_label, "")
+                    dest = dest_opts[0] if isinstance(dest_opts, list) else dest_opts
+
+                result.append({
+                    "carNo": car_no,
+                    "route": route_display,
+                    "eta": eta,
+                    "dest": dest,
+                    "schedule": schedule
+                })
+
+    return result
 
 def main():
     print("👀 main() 開始執行")
-    all_results = []
-
-    for label, ids in bus_routes.items():
-        print(f"🔍 處理 {label}")
-        data = fetch_estimates(ids)
-        result = extract_for_airport(data, label.split("_")[0])  # 顯示為「藍1」、「3」等
-        all_results.extend(result)
-
+    buses = parse_bus_data()
     output = {
         "updated": datetime.now().strftime("%Y-%m-%d %H:%M:%S"),
-        "data": all_results
+        "buses": buses
     }
 
-    path = "docs/data/airport-bus.json"
-    with open(path, "w", encoding="utf-8") as f:
+    os.makedirs("docs/data", exist_ok=True)
+    with open("docs/data/airport-bus.json", "w", encoding="utf-8") as f:
         json.dump(output, f, ensure_ascii=False, indent=2)
 
-    print("📁 寫入 airport-bus.json 完成")
     print("✅ airport-bus.json updated")
 
 if __name__ == "__main__":
