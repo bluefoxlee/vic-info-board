@@ -1,5 +1,5 @@
 {
-  "updated": "2025-08-29 23:33:16",
+  "updated": "2025-08-29 23:45:18",
   "buses": [
     {
       "carNo": "",
@@ -11,7 +11,7 @@
     {
       "carNo": "380-XH",
       "route": "藍1",
-      "eta": "1分",
+      "eta": "2分",
       "dest": "山外",
       "schedule": ""
     },
@@ -25,7 +25,7 @@
     {
       "carNo": "399-XH",
       "route": "藍1",
-      "eta": "1分",
+      "eta": "0分",
       "dest": "金城",
       "schedule": ""
     },
@@ -72,11 +72,11 @@
       "schedule": "07:32"
     },
     {
-      "carNo": "391-XH",
+      "carNo": "",
       "route": "36",
-      "eta": "0分",
+      "eta": "（預定）",
       "dest": "山外",
-      "schedule": ""
+      "schedule": "07:55"
     }
   ]
 }
