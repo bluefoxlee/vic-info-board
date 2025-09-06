@@ -1,12 +1,12 @@
 {
-  "updated": "2025-09-06 02:44:52",
+  "updated": "2025-09-06 03:17:42",
   "buses": [
     {
-      "carNo": "EAA-019",
+      "carNo": "",
       "route": "藍1",
-      "eta": "1分",
+      "eta": "（預定）",
       "dest": "山外",
-      "schedule": ""
+      "schedule": "11:45"
     },
     {
       "carNo": "",
@@ -30,25 +30,25 @@
       "schedule": "17:49"
     },
     {
-      "carNo": "",
+      "carNo": "KKB-0606",
       "route": "3",
-      "eta": "（預定）",
+      "eta": "0分",
       "dest": "金城",
-      "schedule": "11:21"
+      "schedule": ""
     },
     {
       "carNo": "",
       "route": "3",
       "eta": "（預定）",
       "dest": "金城",
-      "schedule": "11:14"
+      "schedule": "12:14"
     },
     {
-      "carNo": "",
+      "carNo": "KKZ-8291",
       "route": "27",
-      "eta": "（預定）",
+      "eta": "1分",
       "dest": "沙美",
-      "schedule": "11:29"
+      "schedule": ""
     },
     {
       "carNo": "",
