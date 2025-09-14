@@ -1,5 +1,5 @@
 {
-  "updated": "2025-09-14 02:51:55",
+  "updated": "2025-09-14 03:30:02",
   "buses": [
     {
       "carNo": "",
@@ -34,14 +34,14 @@
       "route": "3",
       "eta": "（預定）",
       "dest": "金城",
-      "schedule": "11:21"
+      "schedule": "12:21"
     },
     {
       "carNo": "",
       "route": "3",
       "eta": "（預定）",
       "dest": "金城",
-      "schedule": "11:14"
+      "schedule": "12:14"
     },
     {
       "carNo": "",
