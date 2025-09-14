@@ -1,5 +1,5 @@
 {
-  "updated": "2025-09-14 23:18:40",
+  "updated": "2025-09-14 23:30:44",
   "buses": [
     {
       "carNo": "",
@@ -30,11 +30,11 @@
       "schedule": "07:49"
     },
     {
-      "carNo": "378-XH",
+      "carNo": "",
       "route": "3",
-      "eta": "1分",
+      "eta": "（預定）",
       "dest": "金城",
-      "schedule": ""
+      "schedule": "08:21"
     },
     {
       "carNo": "",
@@ -65,11 +65,11 @@
       "schedule": "09:47"
     },
     {
-      "carNo": "398-XH",
+      "carNo": "",
       "route": "35",
-      "eta": "0分",
+      "eta": "（預定）",
       "dest": "烈嶼",
-      "schedule": ""
+      "schedule": "07:32"
     },
     {
       "carNo": "391-XH",
