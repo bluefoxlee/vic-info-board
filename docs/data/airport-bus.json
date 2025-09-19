@@ -1,5 +1,5 @@
 {
-  "updated": "2025-09-19 23:43:36",
+  "updated": "2025-09-19 23:55:30",
   "buses": [
     {
       "carNo": "",
@@ -9,11 +9,11 @@
       "schedule": "08:45"
     },
     {
-      "carNo": "359-XH",
+      "carNo": "",
       "route": "藍1",
-      "eta": "0分",
+      "eta": "（預定）",
       "dest": "山外",
-      "schedule": ""
+      "schedule": "17:58"
     },
     {
       "carNo": "",
