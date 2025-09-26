@@ -1,5 +1,5 @@
 {
-  "updated": "2025-09-26 09:44:39",
+  "updated": "2025-09-26 09:56:35",
   "buses": [
     {
       "carNo": "",
@@ -11,7 +11,7 @@
     {
       "carNo": "EAL-1825",
       "route": "藍1",
-      "eta": "2分",
+      "eta": "0分",
       "dest": "山外",
       "schedule": ""
     },
@@ -23,11 +23,11 @@
       "schedule": ""
     },
     {
-      "carNo": "KKB-0606",
+      "carNo": "",
       "route": "藍1",
-      "eta": "1分",
+      "eta": "（預定）",
       "dest": "金城",
-      "schedule": ""
+      "schedule": "17:49"
     },
     {
       "carNo": "",
