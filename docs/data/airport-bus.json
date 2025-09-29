@@ -1,5 +1,5 @@
 {
-  "updated": "2025-09-29 23:19:50",
+  "updated": "2025-09-29 23:32:14",
   "buses": [
     {
       "carNo": "",
@@ -9,18 +9,32 @@
       "schedule": "08:45"
     },
     {
+      "carNo": "359-XH",
+      "route": "藍1",
+      "eta": "1分",
+      "dest": "山外",
+      "schedule": ""
+    },
+    {
       "carNo": "",
       "route": "藍1",
       "eta": "（預定）",
-      "dest": "山外",
-      "schedule": "07:48"
+      "dest": "金城",
+      "schedule": "08:54"
     },
     {
-      "carNo": "355-XH",
-      "route": "3",
+      "carNo": "378-XH",
+      "route": "藍1",
       "eta": "0分",
       "dest": "金城",
       "schedule": ""
+    },
+    {
+      "carNo": "",
+      "route": "3",
+      "eta": "（預定）",
+      "dest": "金城",
+      "schedule": "08:21"
     },
     {
       "carNo": "",
@@ -53,14 +67,14 @@
     {
       "carNo": "397-XH",
       "route": "35",
-      "eta": "1分",
+      "eta": "3分",
       "dest": "烈嶼",
       "schedule": ""
     },
     {
       "carNo": "392-XH",
       "route": "36",
-      "eta": "1分",
+      "eta": "6分",
       "dest": "山外",
       "schedule": ""
     }
