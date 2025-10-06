@@ -1,5 +1,5 @@
 {
-  "updated": "2025-10-06 09:18:37",
+  "updated": "2025-10-06 09:38:07",
   "buses": [
     {
       "carNo": "",
@@ -23,18 +23,18 @@
       "schedule": ""
     },
     {
-      "carNo": "",
+      "carNo": "383-XH",
       "route": "藍1",
-      "eta": "（預定）",
-      "dest": "金城",
-      "schedule": "17:49"
-    },
-    {
-      "carNo": "KKB-0603",
-      "route": "3",
-      "eta": "2分",
+      "eta": "1分",
       "dest": "金城",
       "schedule": ""
+    },
+    {
+      "carNo": "",
+      "route": "3",
+      "eta": "（預定）",
+      "dest": "金城",
+      "schedule": "18:21"
     },
     {
       "carNo": "",
