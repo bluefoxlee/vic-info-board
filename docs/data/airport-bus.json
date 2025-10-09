@@ -1,5 +1,5 @@
 {
-  "updated": "2025-10-09 23:32:27",
+  "updated": "2025-10-09 23:44:03",
   "buses": [
     {
       "carNo": "",
@@ -65,16 +65,16 @@
       "schedule": "09:47"
     },
     {
-      "carNo": "391-XH",
+      "carNo": "",
       "route": "35",
-      "eta": "3分",
+      "eta": "尚無資料",
       "dest": "烈嶼",
       "schedule": ""
     },
     {
       "carNo": "392-XH",
       "route": "36",
-      "eta": "3分",
+      "eta": "0分",
       "dest": "山外",
       "schedule": ""
     }
