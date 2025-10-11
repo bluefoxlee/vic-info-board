@@ -1,4 +1,82 @@
 {
-  "updated": "2025-10-11 04:17:21",
-  "buses": []
+  "updated": "2025-10-11 04:36:24",
+  "buses": [
+    {
+      "carNo": "EAL-1826",
+      "route": "藍1",
+      "eta": "0分",
+      "dest": "山外",
+      "schedule": ""
+    },
+    {
+      "carNo": "",
+      "route": "藍1",
+      "eta": "（預定）",
+      "dest": "山外",
+      "schedule": "17:58"
+    },
+    {
+      "carNo": "395-XH",
+      "route": "藍1",
+      "eta": "1分",
+      "dest": "金城",
+      "schedule": ""
+    },
+    {
+      "carNo": "",
+      "route": "藍1",
+      "eta": "（預定）",
+      "dest": "金城",
+      "schedule": "17:49"
+    },
+    {
+      "carNo": "",
+      "route": "3",
+      "eta": "（預定）",
+      "dest": "金城",
+      "schedule": "13:21"
+    },
+    {
+      "carNo": "",
+      "route": "3",
+      "eta": "（預定）",
+      "dest": "金城",
+      "schedule": "13:14"
+    },
+    {
+      "carNo": "",
+      "route": "27",
+      "eta": "尚無資料",
+      "dest": "沙美",
+      "schedule": ""
+    },
+    {
+      "carNo": "",
+      "route": "27",
+      "eta": "（預定）",
+      "dest": "沙美",
+      "schedule": "12:39"
+    },
+    {
+      "carNo": "",
+      "route": "35",
+      "eta": "尚無資料",
+      "dest": "烈嶼",
+      "schedule": ""
+    },
+    {
+      "carNo": "",
+      "route": "35",
+      "eta": "尚無資料",
+      "dest": "烈嶼",
+      "schedule": ""
+    },
+    {
+      "carNo": "",
+      "route": "36",
+      "eta": "尚無資料",
+      "dest": "山外",
+      "schedule": ""
+    }
+  ]
 }
