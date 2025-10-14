@@ -1,5 +1,5 @@
 {
-  "updated": "2025-10-14 09:36:01",
+  "updated": "2025-10-14 09:48:17",
   "buses": [
     {
       "carNo": "",
@@ -9,11 +9,11 @@
       "schedule": ""
     },
     {
-      "carNo": "",
+      "carNo": "KKB-0605",
       "route": "藍1",
-      "eta": "（預定）",
+      "eta": "2分",
       "dest": "山外",
-      "schedule": "17:58"
+      "schedule": ""
     },
     {
       "carNo": "",
