@@ -1,5 +1,5 @@
 {
-  "updated": "2025-10-21 09:44:41",
+  "updated": "2025-10-21 09:55:40",
   "buses": [
     {
       "carNo": "",
@@ -11,7 +11,7 @@
     {
       "carNo": "EAL-1830",
       "route": "藍1",
-      "eta": "2分",
+      "eta": "1分",
       "dest": "山外",
       "schedule": ""
     },
@@ -23,11 +23,11 @@
       "schedule": ""
     },
     {
-      "carNo": "357-XH",
+      "carNo": "",
       "route": "藍1",
-      "eta": "1分",
+      "eta": "（預定）",
       "dest": "金城",
-      "schedule": ""
+      "schedule": "17:49"
     },
     {
       "carNo": "",
