@@ -1,5 +1,5 @@
 {
-  "updated": "2025-10-31 09:15:47",
+  "updated": "2025-10-31 09:36:30",
   "buses": [
     {
       "carNo": "",
@@ -23,25 +23,25 @@
       "schedule": ""
     },
     {
-      "carNo": "",
+      "carNo": "355-XH",
       "route": "藍1",
+      "eta": "1分",
+      "dest": "金城",
+      "schedule": ""
+    },
+    {
+      "carNo": "",
+      "route": "3",
       "eta": "（預定）",
       "dest": "金城",
-      "schedule": "17:49"
+      "schedule": "18:21"
     },
     {
-      "carNo": "EAL-1822",
+      "carNo": "",
       "route": "3",
-      "eta": "1分",
+      "eta": "（預定）",
       "dest": "金城",
-      "schedule": ""
-    },
-    {
-      "carNo": "EAA-018",
-      "route": "3",
-      "eta": "1分",
-      "dest": "金城",
-      "schedule": ""
+      "schedule": "18:14"
     },
     {
       "carNo": "",
