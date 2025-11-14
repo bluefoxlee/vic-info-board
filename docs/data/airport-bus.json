@@ -1,12 +1,12 @@
 {
-  "updated": "2025-11-14 04:33:14",
+  "updated": "2025-11-14 04:48:45",
   "buses": [
     {
-      "carNo": "EAL-1826",
+      "carNo": "",
       "route": "藍1",
-      "eta": "0分",
+      "eta": "（預定）",
       "dest": "山外",
-      "schedule": ""
+      "schedule": "13:45"
     },
     {
       "carNo": "",
