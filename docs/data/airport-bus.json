@@ -1,12 +1,12 @@
 {
-  "updated": "2025-11-22 06:31:01",
+  "updated": "2025-11-22 06:50:10",
   "buses": [
     {
-      "carNo": "",
+      "carNo": "382-XH",
       "route": "藍1",
-      "eta": "（預定）",
+      "eta": "1分",
       "dest": "山外",
-      "schedule": "15:45"
+      "schedule": ""
     },
     {
       "carNo": "",
