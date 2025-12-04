@@ -1,12 +1,12 @@
 {
-  "updated": "2025-12-04 05:47:16",
+  "updated": "2025-12-04 05:59:11",
   "buses": [
     {
-      "carNo": "EAL-1822",
+      "carNo": "",
       "route": "藍1",
-      "eta": "2分",
+      "eta": "（預定）",
       "dest": "山外",
-      "schedule": ""
+      "schedule": "14:45"
     },
     {
       "carNo": "",
@@ -14,20 +14,6 @@
       "eta": "（預定）",
       "dest": "山外",
       "schedule": "17:58"
-    },
-    {
-      "carNo": "",
-      "route": "藍1",
-      "eta": "（預定）",
-      "dest": "金城",
-      "schedule": "14:54"
-    },
-    {
-      "carNo": "",
-      "route": "藍1",
-      "eta": "（預定）",
-      "dest": "金城",
-      "schedule": "17:49"
     },
     {
       "carNo": "",
