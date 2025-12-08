@@ -1,12 +1,12 @@
 {
-  "updated": "2025-12-08 06:39:14",
+  "updated": "2025-12-08 07:01:34",
   "buses": [
     {
-      "carNo": "EAA-022",
+      "carNo": "",
       "route": "藍1",
-      "eta": "0分",
+      "eta": "（預定）",
       "dest": "山外",
-      "schedule": ""
+      "schedule": "15:45"
     },
     {
       "carNo": "",
@@ -16,11 +16,11 @@
       "schedule": "17:58"
     },
     {
-      "carNo": "328-XH",
+      "carNo": "",
       "route": "藍1",
-      "eta": "0分",
+      "eta": "（預定）",
       "dest": "金城",
-      "schedule": ""
+      "schedule": "15:54"
     },
     {
       "carNo": "",
@@ -30,24 +30,17 @@
       "schedule": "17:49"
     },
     {
-      "carNo": "",
+      "carNo": "KKB-0602",
       "route": "3",
-      "eta": "（預定）",
+      "eta": "0分",
       "dest": "金城",
-      "schedule": "15:21"
+      "schedule": ""
     },
     {
-      "carNo": "",
+      "carNo": "383-XH",
       "route": "3",
-      "eta": "（預定）",
+      "eta": "1分",
       "dest": "金城",
-      "schedule": "15:14"
-    },
-    {
-      "carNo": "",
-      "route": "27",
-      "eta": "尚無資料",
-      "dest": "沙美",
       "schedule": ""
     },
     {
@@ -56,6 +49,13 @@
       "eta": "尚無資料",
       "dest": "沙美",
       "schedule": ""
+    },
+    {
+      "carNo": "",
+      "route": "27",
+      "eta": "（預定）",
+      "dest": "沙美",
+      "schedule": "15:19"
     },
     {
       "carNo": "",
