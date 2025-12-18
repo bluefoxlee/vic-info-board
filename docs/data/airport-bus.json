@@ -1,5 +1,5 @@
 {
-  "updated": "2025-12-18 09:36:44",
+  "updated": "2025-12-18 09:54:34",
   "buses": [
     {
       "carNo": "",
@@ -9,11 +9,11 @@
       "schedule": ""
     },
     {
-      "carNo": "",
+      "carNo": "EAA-021",
       "route": "藍1",
-      "eta": "（預定）",
+      "eta": "0分",
       "dest": "山外",
-      "schedule": "17:58"
+      "schedule": ""
     },
     {
       "carNo": "",
@@ -25,7 +25,7 @@
     {
       "carNo": "355-XH",
       "route": "藍1",
-      "eta": "0分",
+      "eta": "2分",
       "dest": "金城",
       "schedule": ""
     },
