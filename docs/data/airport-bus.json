@@ -1,4 +1,82 @@
 {
-  "updated": "2025-12-21 00:59:58",
-  "buses": []
+  "updated": "2025-12-21 03:02:41",
+  "buses": [
+    {
+      "carNo": "",
+      "route": "藍1",
+      "eta": "（預定）",
+      "dest": "山外",
+      "schedule": "11:45"
+    },
+    {
+      "carNo": "",
+      "route": "藍1",
+      "eta": "（預定）",
+      "dest": "山外",
+      "schedule": "17:58"
+    },
+    {
+      "carNo": "",
+      "route": "藍1",
+      "eta": "（預定）",
+      "dest": "金城",
+      "schedule": "11:54"
+    },
+    {
+      "carNo": "",
+      "route": "藍1",
+      "eta": "（預定）",
+      "dest": "金城",
+      "schedule": "17:49"
+    },
+    {
+      "carNo": "500-XH",
+      "route": "3",
+      "eta": "1分",
+      "dest": "金城",
+      "schedule": ""
+    },
+    {
+      "carNo": "EAA-018",
+      "route": "3",
+      "eta": "0分",
+      "dest": "金城",
+      "schedule": ""
+    },
+    {
+      "carNo": "",
+      "route": "27",
+      "eta": "（預定）",
+      "dest": "沙美",
+      "schedule": "11:29"
+    },
+    {
+      "carNo": "",
+      "route": "27",
+      "eta": "（預定）",
+      "dest": "沙美",
+      "schedule": "12:39"
+    },
+    {
+      "carNo": "",
+      "route": "35",
+      "eta": "尚無資料",
+      "dest": "烈嶼",
+      "schedule": ""
+    },
+    {
+      "carNo": "",
+      "route": "35",
+      "eta": "尚無資料",
+      "dest": "烈嶼",
+      "schedule": ""
+    },
+    {
+      "carNo": "",
+      "route": "36",
+      "eta": "尚無資料",
+      "dest": "山外",
+      "schedule": ""
+    }
+  ]
 }
