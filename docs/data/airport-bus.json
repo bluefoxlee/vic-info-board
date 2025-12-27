@@ -1,5 +1,5 @@
 {
-  "updated": "2025-12-27 10:15:10",
+  "updated": "2025-12-27 10:39:49",
   "buses": [
     {
       "carNo": "",
@@ -11,15 +11,8 @@
     {
       "carNo": "",
       "route": "藍1",
-      "eta": "（預定）",
+      "eta": "尚無資料",
       "dest": "山外",
-      "schedule": "17:58"
-    },
-    {
-      "carNo": "",
-      "route": "藍1",
-      "eta": "尚無資料",
-      "dest": "金城",
       "schedule": ""
     },
     {
@@ -30,11 +23,18 @@
       "schedule": ""
     },
     {
-      "carNo": "361-XH",
+      "carNo": "",
+      "route": "藍1",
+      "eta": "尚無資料",
+      "dest": "金城",
+      "schedule": ""
+    },
+    {
+      "carNo": "",
       "route": "3",
-      "eta": "0分",
+      "eta": "（預定）",
       "dest": "金城",
-      "schedule": ""
+      "schedule": "19:21"
     },
     {
       "carNo": "",
