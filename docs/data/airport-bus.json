@@ -1,5 +1,5 @@
 {
-  "updated": "2026-01-06 10:11:21",
+  "updated": "2026-01-06 10:43:51",
   "buses": [
     {
       "carNo": "",
@@ -11,15 +11,8 @@
     {
       "carNo": "",
       "route": "藍1",
-      "eta": "（預定）",
+      "eta": "尚無資料",
       "dest": "山外",
-      "schedule": "17:58"
-    },
-    {
-      "carNo": "",
-      "route": "藍1",
-      "eta": "尚無資料",
-      "dest": "金城",
       "schedule": ""
     },
     {
@@ -30,18 +23,25 @@
       "schedule": ""
     },
     {
-      "carNo": "379-XH",
-      "route": "3",
-      "eta": "0分",
+      "carNo": "",
+      "route": "藍1",
+      "eta": "尚無資料",
       "dest": "金城",
       "schedule": ""
     },
     {
-      "carNo": "EAL-1826",
+      "carNo": "",
       "route": "3",
-      "eta": "1分",
+      "eta": "（預定）",
       "dest": "金城",
-      "schedule": ""
+      "schedule": "19:21"
+    },
+    {
+      "carNo": "",
+      "route": "3",
+      "eta": "（預定）",
+      "dest": "金城",
+      "schedule": "19:14"
     },
     {
       "carNo": "",
