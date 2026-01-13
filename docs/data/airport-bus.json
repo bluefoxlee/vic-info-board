@@ -1,26 +1,12 @@
 {
-  "updated": "2026-01-13 05:57:03",
+  "updated": "2026-01-13 06:48:11",
   "buses": [
     {
-      "carNo": "",
+      "carNo": "KKB-0602",
       "route": "藍1",
-      "eta": "（預定）",
-      "dest": "山外",
-      "schedule": "14:45"
-    },
-    {
-      "carNo": "",
-      "route": "藍1",
-      "eta": "（預定）",
-      "dest": "山外",
-      "schedule": "17:58"
-    },
-    {
-      "carNo": "",
-      "route": "藍1",
-      "eta": "（預定）",
+      "eta": "2分",
       "dest": "金城",
-      "schedule": "14:54"
+      "schedule": ""
     },
     {
       "carNo": "",
@@ -34,14 +20,14 @@
       "route": "3",
       "eta": "（預定）",
       "dest": "金城",
-      "schedule": "14:21"
+      "schedule": "15:21"
     },
     {
       "carNo": "",
       "route": "3",
       "eta": "（預定）",
       "dest": "金城",
-      "schedule": "14:14"
+      "schedule": "15:14"
     },
     {
       "carNo": "",
