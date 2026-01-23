@@ -1,5 +1,5 @@
 {
-  "updated": "2026-01-23 23:44:54",
+  "updated": "2026-01-23 23:57:09",
   "buses": [
     {
       "carNo": "",
@@ -23,11 +23,11 @@
       "schedule": "08:54"
     },
     {
-      "carNo": "383-XH",
+      "carNo": "",
       "route": "藍1",
-      "eta": "1分",
+      "eta": "（預定）",
       "dest": "金城",
-      "schedule": ""
+      "schedule": "17:49"
     },
     {
       "carNo": "",
@@ -72,11 +72,11 @@
       "schedule": ""
     },
     {
-      "carNo": "392-XH",
+      "carNo": "",
       "route": "36",
-      "eta": "0分",
+      "eta": "（預定）",
       "dest": "山外",
-      "schedule": ""
+      "schedule": "07:55"
     }
   ]
 }
