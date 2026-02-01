@@ -1,12 +1,12 @@
 {
-  "updated": "2026-02-01 01:03:41",
+  "updated": "2026-02-01 04:03:18",
   "buses": [
     {
       "carNo": "",
       "route": "藍1",
       "eta": "（預定）",
       "dest": "山外",
-      "schedule": "09:45"
+      "schedule": "12:45"
     },
     {
       "carNo": "",
@@ -20,7 +20,7 @@
       "route": "藍1",
       "eta": "（預定）",
       "dest": "金城",
-      "schedule": "09:54"
+      "schedule": "12:54"
     },
     {
       "carNo": "",
@@ -30,14 +30,14 @@
       "schedule": "17:49"
     },
     {
-      "carNo": "EAA-021",
+      "carNo": "EAA-016",
       "route": "3",
       "eta": "1分",
       "dest": "金城",
       "schedule": ""
     },
     {
-      "carNo": "380-XH",
+      "carNo": "EAA-022",
       "route": "3",
       "eta": "1分",
       "dest": "金城",
@@ -46,23 +46,23 @@
     {
       "carNo": "",
       "route": "27",
-      "eta": "（預定）",
+      "eta": "尚無資料",
       "dest": "沙美",
-      "schedule": "11:29"
+      "schedule": ""
     },
     {
-      "carNo": "",
+      "carNo": "KKZ-8291",
       "route": "27",
-      "eta": "（預定）",
+      "eta": "1分",
       "dest": "沙美",
-      "schedule": "12:39"
+      "schedule": ""
     },
     {
       "carNo": "",
       "route": "35",
-      "eta": "（預定）",
+      "eta": "尚無資料",
       "dest": "烈嶼",
-      "schedule": "09:47"
+      "schedule": ""
     },
     {
       "carNo": "",
