@@ -1,10 +1,10 @@
 {
-  "updated": "2026-02-05 06:38:40",
+  "updated": "2026-02-05 07:38:24",
   "buses": [
     {
-      "carNo": "399-XH",
+      "carNo": "EAA-017",
       "route": "藍1",
-      "eta": "0分",
+      "eta": "1分",
       "dest": "山外",
       "schedule": ""
     },
@@ -16,9 +16,9 @@
       "schedule": "17:58"
     },
     {
-      "carNo": "EAA-016",
+      "carNo": "EAL-1831",
       "route": "藍1",
-      "eta": "2分",
+      "eta": "0分",
       "dest": "金城",
       "schedule": ""
     },
@@ -34,14 +34,14 @@
       "route": "3",
       "eta": "（預定）",
       "dest": "金城",
-      "schedule": "15:21"
+      "schedule": "16:21"
     },
     {
       "carNo": "",
       "route": "3",
       "eta": "（預定）",
       "dest": "金城",
-      "schedule": "15:14"
+      "schedule": "16:14"
     },
     {
       "carNo": "",
