@@ -1,12 +1,12 @@
 {
-  "updated": "2026-02-05 23:51:46",
+  "updated": "2026-02-06 01:43:36",
   "buses": [
     {
-      "carNo": "",
+      "carNo": "395-XH",
       "route": "藍1",
-      "eta": "（預定）",
+      "eta": "0分",
       "dest": "山外",
-      "schedule": "08:45"
+      "schedule": ""
     },
     {
       "carNo": "",
@@ -16,14 +16,7 @@
       "schedule": "17:58"
     },
     {
-      "carNo": "",
-      "route": "藍1",
-      "eta": "（預定）",
-      "dest": "金城",
-      "schedule": "08:54"
-    },
-    {
-      "carNo": "378-XH",
+      "carNo": "EAA-021",
       "route": "藍1",
       "eta": "0分",
       "dest": "金城",
@@ -31,17 +24,24 @@
     },
     {
       "carNo": "",
-      "route": "3",
+      "route": "藍1",
       "eta": "（預定）",
       "dest": "金城",
-      "schedule": "08:21"
+      "schedule": "17:49"
     },
     {
       "carNo": "",
       "route": "3",
       "eta": "（預定）",
       "dest": "金城",
-      "schedule": "08:14"
+      "schedule": "10:21"
+    },
+    {
+      "carNo": "",
+      "route": "3",
+      "eta": "（預定）",
+      "dest": "金城",
+      "schedule": "10:14"
     },
     {
       "carNo": "",
@@ -58,11 +58,11 @@
       "schedule": "12:39"
     },
     {
-      "carNo": "",
+      "carNo": "385-XH",
       "route": "35",
-      "eta": "（預定）",
+      "eta": "3分",
       "dest": "烈嶼",
-      "schedule": "09:47"
+      "schedule": ""
     },
     {
       "carNo": "",
@@ -74,9 +74,9 @@
     {
       "carNo": "",
       "route": "36",
-      "eta": "（預定）",
+      "eta": "尚無資料",
       "dest": "山外",
-      "schedule": "07:55"
+      "schedule": ""
     }
   ]
 }
