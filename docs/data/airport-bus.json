@@ -1,12 +1,12 @@
 {
-  "updated": "2026-02-10 07:48:11",
+  "updated": "2026-02-10 08:34:35",
   "buses": [
     {
-      "carNo": "",
+      "carNo": "EAA-022",
       "route": "藍1",
-      "eta": "（預定）",
+      "eta": "1分",
       "dest": "山外",
-      "schedule": "16:45"
+      "schedule": ""
     },
     {
       "carNo": "",
@@ -16,9 +16,9 @@
       "schedule": "17:58"
     },
     {
-      "carNo": "EAA-022",
+      "carNo": "381-XH",
       "route": "藍1",
-      "eta": "2分",
+      "eta": "1分",
       "dest": "金城",
       "schedule": ""
     },
@@ -34,14 +34,14 @@
       "route": "3",
       "eta": "（預定）",
       "dest": "金城",
-      "schedule": "16:21"
+      "schedule": "17:21"
     },
     {
       "carNo": "",
       "route": "3",
       "eta": "（預定）",
       "dest": "金城",
-      "schedule": "16:14"
+      "schedule": "17:14"
     },
     {
       "carNo": "",
