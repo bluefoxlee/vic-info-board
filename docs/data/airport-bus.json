@@ -1,5 +1,5 @@
 {
-  "updated": "2026-03-31 23:38:42",
+  "updated": "2026-04-01 00:04:40",
   "buses": [
     {
       "carNo": "",
@@ -9,11 +9,11 @@
       "schedule": "08:45"
     },
     {
-      "carNo": "EAL-1821",
+      "carNo": "",
       "route": "藍1",
-      "eta": "1分",
+      "eta": "（預定）",
       "dest": "山外",
-      "schedule": ""
+      "schedule": "17:58"
     },
     {
       "carNo": "",
@@ -23,25 +23,25 @@
       "schedule": "08:54"
     },
     {
-      "carNo": "EAL-1830",
+      "carNo": "",
       "route": "藍1",
-      "eta": "1分",
+      "eta": "（預定）",
+      "dest": "金城",
+      "schedule": "17:49"
+    },
+    {
+      "carNo": "KKB-0602",
+      "route": "3",
+      "eta": "2分",
       "dest": "金城",
       "schedule": ""
     },
     {
-      "carNo": "",
+      "carNo": "378-XH",
       "route": "3",
-      "eta": "（預定）",
+      "eta": "1分",
       "dest": "金城",
-      "schedule": "08:21"
-    },
-    {
-      "carNo": "",
-      "route": "3",
-      "eta": "（預定）",
-      "dest": "金城",
-      "schedule": "08:14"
+      "schedule": ""
     },
     {
       "carNo": "",
@@ -67,16 +67,16 @@
     {
       "carNo": "",
       "route": "35",
-      "eta": "（預定）",
+      "eta": "尚無資料",
       "dest": "烈嶼",
-      "schedule": "07:32"
+      "schedule": ""
     },
     {
-      "carNo": "391-XH",
+      "carNo": "",
       "route": "36",
-      "eta": "1分",
+      "eta": "（預定）",
       "dest": "山外",
-      "schedule": ""
+      "schedule": "07:55"
     }
   ]
 }
