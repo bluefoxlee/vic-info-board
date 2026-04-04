@@ -1,35 +1,29 @@
 {
-  "updated": "2026-04-04 15:49:13",
+  "updated": "2026-04-04 16:34:46",
   "ferries": [
-    {
-      "name": "迅安",
-      "dep": "15:30",
-      "actual": "15:26",
-      "status": "✅ 離港"
-    },
     {
       "name": "八方",
       "dep": "16:15",
-      "actual": "--:--",
-      "status": "🟡 安檢"
+      "actual": "16:13",
+      "status": "✅ 離港"
     },
     {
       "name": "新東方",
       "dep": "16:30",
-      "actual": "--:--",
-      "status": "🟡 安檢"
+      "actual": "16:27",
+      "status": "✅ 離港"
     },
     {
       "name": "和平新星",
       "dep": "17:00",
       "actual": "--:--",
-      "status": "🟢 準時"
+      "status": "🟡 安檢"
     },
     {
       "name": "新五緣",
       "dep": "17:30",
       "actual": "--:--",
-      "status": "🟢 準時"
+      "status": "🟡 安檢"
     }
   ]
 }
