@@ -1,33 +1,33 @@
 {
-  "updated": "2026-08-09 15:54:00",
+  "updated": "2026-08-09 16:34:19",
   "ferries": [
-    {
-      "name": "新五緣WY",
-      "dep": "15:30",
-      "actual": "15:28",
-      "status": "✅ 離港"
-    },
     {
       "name": "金星6號JX",
       "dep": "16:30",
-      "actual": "--:--",
-      "status": "🟡 安檢"
+      "actual": "16:25",
+      "status": "✅ 離港"
     },
     {
       "name": "八方BF",
       "dep": "16:35",
-      "actual": "--:--",
-      "status": "🟡 安檢"
+      "actual": "16:30",
+      "status": "✅ 離港"
     },
     {
       "name": "新捷安XJA",
       "dep": "17:00",
       "actual": "--:--",
-      "status": "🟢 準時"
+      "status": "🟡 安檢"
     },
     {
       "name": "新武夷XWY",
       "dep": "17:30",
+      "actual": "--:--",
+      "status": "🟡 安檢"
+    },
+    {
+      "name": "新五緣WY",
+      "dep": "18:00",
       "actual": "--:--",
       "status": "🟢 準時"
     }
