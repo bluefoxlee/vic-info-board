@@ -1,27 +1,27 @@
 {
-  "updated": "2026-08-10 07:53:19",
+  "updated": "2026-08-10 10:21:57",
   "ferries": [
-    {
-      "name": "馬可波羅1號MKPL1",
-      "dep": "08:00",
-      "actual": "--:--",
-      "status": "🟡 安檢"
-    },
-    {
-      "name": "金瑞龍KRL",
-      "dep": "08:30",
-      "actual": "--:--",
-      "status": "🟡 安檢"
-    },
-    {
-      "name": "金星6號JX",
-      "dep": "09:00",
-      "actual": "--:--",
-      "status": "🟢 準時"
-    },
     {
       "name": "八方BF",
       "dep": "09:50",
+      "actual": "09:47",
+      "status": "✅ 離港"
+    },
+    {
+      "name": "新捷安XJA",
+      "dep": "10:00",
+      "actual": "10:00",
+      "status": "✅ 離港"
+    },
+    {
+      "name": "馬可波羅1號MKPL1",
+      "dep": "10:30",
+      "actual": "--:--",
+      "status": "🟡 安檢"
+    },
+    {
+      "name": "新武夷XWY",
+      "dep": "11:30",
       "actual": "--:--",
       "status": "🟢 準時"
     }
