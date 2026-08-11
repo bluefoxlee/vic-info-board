@@ -1,21 +1,21 @@
 {
-  "updated": "2026-08-11 12:55:59",
+  "updated": "2026-08-11 13:53:34",
   "ferries": [
-    {
-      "name": "金星6號JX",
-      "dep": "12:30",
-      "actual": "12:28",
-      "status": "✅ 離港"
-    },
     {
       "name": "和平新星HP",
       "dep": "13:30",
-      "actual": "--:--",
-      "status": "🟡 安檢"
+      "actual": "13:25",
+      "status": "✅ 離港"
     },
     {
       "name": "馬可波羅1號MKPL1",
       "dep": "14:30",
+      "actual": "--:--",
+      "status": "🟡 安檢"
+    },
+    {
+      "name": "新武夷XWY",
+      "dep": "15:30",
       "actual": "--:--",
       "status": "🟢 準時"
     }
