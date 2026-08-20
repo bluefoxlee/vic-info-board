@@ -1,23 +1,17 @@
 {
-  "updated": "2026-08-20 09:40:54",
+  "updated": "2026-08-20 10:12:22",
   "ferries": [
-    {
-      "name": "金星6號JX",
-      "dep": "09:00",
-      "actual": "08:59",
-      "status": "✅ 離港"
-    },
     {
       "name": "八方BF",
       "dep": "09:50",
-      "actual": "--:--",
-      "status": "🟡 安檢"
+      "actual": "09:59",
+      "status": "✅ 離港"
     },
     {
       "name": "新捷安XJA",
       "dep": "10:00",
-      "actual": "--:--",
-      "status": "🟡 安檢"
+      "actual": "10:00",
+      "status": "✅ 離港"
     },
     {
       "name": "馬可波羅1號MKPL1",
