@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23 15:33:58",
+  "updated": "2026-08-23 16:21:39",
   "ferries": [
     {
       "name": "和平新星HP",
@@ -17,17 +17,23 @@
       "name": "八方BF",
       "dep": "16:35",
       "actual": "--:--",
-      "status": "🟢 準時"
+      "status": "🟡 安檢"
     },
     {
       "name": "新五緣WY",
       "dep": "17:00",
       "actual": "--:--",
-      "status": "🟢 準時"
+      "status": "🟡 安檢"
     },
     {
       "name": "新捷安XJA",
       "dep": "17:30",
+      "actual": "--:--",
+      "status": "🟢 準時"
+    },
+    {
+      "name": "和平新星HP",
+      "dep": "18:00",
       "actual": "--:--",
       "status": "🟢 準時"
     }
