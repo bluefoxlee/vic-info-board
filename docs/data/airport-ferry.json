@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-17 15:30:48",
+  "updated": "2026-09-17 16:23:35",
   "ferries": [
     {
       "name": "和平新星HP",
@@ -11,19 +11,19 @@
       "name": "金瑞龍KRL",
       "dep": "16:30",
       "actual": "--:--",
-      "status": "🟢 準時"
+      "status": "🟡 安檢"
     },
     {
       "name": "八方BF",
       "dep": "16:35",
       "actual": "--:--",
-      "status": "🟢 準時"
+      "status": "🟡 安檢"
     },
     {
       "name": "新五緣WY",
       "dep": "17:00",
       "actual": "--:--",
-      "status": "🟢 準時"
+      "status": "🟡 安檢"
     },
     {
       "name": "新捷安XJA",
