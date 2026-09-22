@@ -1,47 +1,47 @@
 {
-  "updated": "2026-09-22 06:44:32",
+  "updated": "2026-09-22 12:04:54",
   "buses": [
     {
-      "carNo": "393-XH",
+      "carNo": "",
       "route": "藍1",
+      "eta": "尚無資料",
+      "dest": "山外",
+      "schedule": ""
+    },
+    {
+      "carNo": "",
+      "route": "藍1",
+      "eta": "尚無資料",
+      "dest": "山外",
+      "schedule": ""
+    },
+    {
+      "carNo": "",
+      "route": "藍1",
+      "eta": "尚無資料",
+      "dest": "金城",
+      "schedule": ""
+    },
+    {
+      "carNo": "",
+      "route": "藍1",
+      "eta": "尚無資料",
+      "dest": "金城",
+      "schedule": ""
+    },
+    {
+      "carNo": "358-XH",
+      "route": "3",
+      "eta": "2分",
+      "dest": "金城",
+      "schedule": ""
+    },
+    {
+      "carNo": "EAL-1820",
+      "route": "3",
       "eta": "1分",
-      "dest": "山外",
-      "schedule": ""
-    },
-    {
-      "carNo": "",
-      "route": "藍1",
-      "eta": "（預定）",
-      "dest": "山外",
-      "schedule": "17:58"
-    },
-    {
-      "carNo": "379-XH",
-      "route": "藍1",
-      "eta": "0分",
       "dest": "金城",
       "schedule": ""
-    },
-    {
-      "carNo": "",
-      "route": "藍1",
-      "eta": "（預定）",
-      "dest": "金城",
-      "schedule": "17:49"
-    },
-    {
-      "carNo": "",
-      "route": "3",
-      "eta": "（預定）",
-      "dest": "金城",
-      "schedule": "15:21"
-    },
-    {
-      "carNo": "",
-      "route": "3",
-      "eta": "（預定）",
-      "dest": "金城",
-      "schedule": "15:14"
     },
     {
       "carNo": "",
