@@ -1,4 +1,35 @@
 {
-  "updated": "2026-09-22 00:48:49",
-  "ferries": []
+  "updated": "2026-09-22 09:18:24",
+  "ferries": [
+    {
+      "name": "新金祥龍XKXL",
+      "dep": "08:30",
+      "actual": "08:27",
+      "status": "✅ 離港"
+    },
+    {
+      "name": "新東方XDF",
+      "dep": "09:00",
+      "actual": "08:56",
+      "status": "✅ 離港"
+    },
+    {
+      "name": "八方BF",
+      "dep": "09:50",
+      "actual": "--:--",
+      "status": "🟡 安檢"
+    },
+    {
+      "name": "和平新星HP",
+      "dep": "10:00",
+      "actual": "--:--",
+      "status": "🟡 安檢"
+    },
+    {
+      "name": "金瑞龍KRL",
+      "dep": "10:30",
+      "actual": "--:--",
+      "status": "🟢 準時"
+    }
+  ]
 }
