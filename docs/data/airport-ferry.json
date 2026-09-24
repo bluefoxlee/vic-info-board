@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-24 15:31:01",
+  "updated": "2026-09-24 16:08:52",
   "ferries": [
     {
       "name": "新捷安XJA",
@@ -11,13 +11,13 @@
       "name": "馬可波羅1號MKPL1",
       "dep": "16:30",
       "actual": "--:--",
-      "status": "🟢 準時"
+      "status": "🟡 安檢"
     },
     {
       "name": "八方BF",
       "dep": "16:35",
       "actual": "--:--",
-      "status": "🟢 準時"
+      "status": "🟡 安檢"
     },
     {
       "name": "新武夷XWY",
